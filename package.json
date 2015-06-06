@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "node ./bin/cli build",
-    "clean": "rm {index.html,index.{js,css}}",
+    "clean": "rm -rf dist",
     "dev": "linklocal link -r && linklocal list -r | bulk -c 'npm i --production'",
     "postversion": "npm run build && gh-pages -d dist && npm run clean",
     "prepublish": "if [[ $NODE_ENV != 'production' ]]; then npm run dev; fi",
-    "preversion": "echo 'derp' && npm run clean",
+    "preversion": "npm run clean",
     "start": "node ./bin/cli start -p 1337 | garnish",
     "test": "standard && NODE_ENV=test node test",
     "test-cov": "standard && NODE_ENV=test istanbul cover test.js"
