@@ -1,7 +1,7 @@
 const browserify = require('browserify')
 const brick = require('brick-router')
 const watchify = require('watchify')
-const cssNext = require('cssnext')
+const cssnext = require('cssnext')
 const path = require('path')
 const fs = require('fs')
 
@@ -29,7 +29,7 @@ router.on('/bundle.css', function (cb) {
   const source = path.join(root, 'css/index.css')
   fs.readFile(source, function (err, data) {
     if (err) return cb(err)
-    const res = cssNext(data, { from: source })
+    const res = cssnext(data.toString(), { from: source })
     cb(null, res)
   })
 })

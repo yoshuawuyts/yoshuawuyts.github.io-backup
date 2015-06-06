@@ -36,7 +36,7 @@ if (cmd === 'start') {
 
 // build
 if (cmd === 'build') {
-  pkg.build(__dirname, function (err, res) {
+  pkg.build('dist', function (err, res) {
     if (err) {
       console.log('error:', err)
       process.exit(1)

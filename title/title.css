@@ -1,0 +1,7 @@
+/* title */
+
+.title-vertical {
+  transform: rotate(270deg);
+  text-transform: uppercase;
+  font-size: var(--font-size-title);
+}
