@@ -26,7 +26,7 @@ router.on('/bundle.js', function (cb) {
 
 // css bundle
 router.on('/bundle.css', function (cb) {
-  const source = path.join(root, 'index.css')
+  const source = path.join(root, 'css/index.css')
   fs.readFile(source, function (err, data) {
     if (err) return cb(err)
     const res = cssNext(data, { from: source })
