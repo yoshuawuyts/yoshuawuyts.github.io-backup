@@ -7,7 +7,7 @@
     "build": "node ./bin/cli build",
     "clean": "rm -rf dist",
     "dev": "linklocal link -r && linklocal list -r | bulk -c 'npm i --production'",
-    "postversion": "npm run build && gh-pages -d dist && npm run clean",
+    "postversion": "npm run build && gh-pages -d dist && npm run clean && echo 'done'",
     "prepublish": "if [[ $NODE_ENV != 'production' ]]; then npm run dev; fi",
     "preversion": "npm run clean",
     "start": "node ./bin/cli start -p 1337 | garnish",
