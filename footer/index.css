@@ -2,6 +2,11 @@
   flex: none;
 }
 
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* slogan */
 
 .footer-slogan {
@@ -13,5 +18,8 @@
 /* nav */
 
 .footer-nav {
-  font-size:
+  margin: 3rem;
+  font-size: var(--font-size-title);
+  font-family: 'museo-sans', 'sans-serif';
+  font-weight: normal;
 }
