@@ -1,4 +1,11 @@
 @import 'css-wipe';
 @import './variables.css';
 
-@import '../title/title.css';
+@import '../description/title.css';
+
+body {
+  display: flex;
+  justify-content: space-between;
+  /* todo: change to video, remove this color */
+  background-color: honeydew;
+}
