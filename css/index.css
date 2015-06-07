@@ -1,10 +1,6 @@
 @import 'css-wipe';
 @import './variables.css';
 
-@import '../header/title.css';
-@import '../footer/slogan.css';
-
-body {
-  /* todo: change to video, remove this color */
-  background-color: honeydew;
-}
+@import './base.css';
+@import '../header/index.css';
+@import '../footer/index.css';

@@ -1,8 +1,13 @@
 /* header */
 
 .header {
+  width: 100vw;
+}
+
+.header-inner  {
   display: flex;
   justify-content: space-between;
+  width: 100vw;
 }
 
 .header-firstname {

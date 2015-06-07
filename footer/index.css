@@ -1,10 +1,17 @@
+.footer {
+  flex: none;
+}
+
 /* slogan */
 
 .footer-slogan {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   margin: 3rem;
-  max-width: 600px;
+  width: 600px;
   font-size: var(--font-size-title);
+}
+
+/* nav */
+
+.footer-nav {
+  font-size:
 }
