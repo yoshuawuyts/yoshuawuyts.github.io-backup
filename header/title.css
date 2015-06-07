@@ -1,6 +1,11 @@
-/* title */
+/* header */
 
-.description-firstname {
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-firstname {
   margin: 3rem;
   display: inline-block;
   overflow: hidden;
@@ -9,7 +14,7 @@
   text-transform: uppercase;
 }
 
-.description-firstname-inner {
+.header-firstname-inner {
   display: inline-block;
   white-space: nowrap;
   transform: translate(0,100%) rotate(-90deg);
@@ -17,13 +22,13 @@
   font-size: var(--font-size-headline);
 }
 
-.description-firstname-inner:after {
+.header-firstname-inner:after {
   content: "";
   float: left;
   margin-top: 100%;
 }
 
-.description-lastname {
+.header-lastname {
   margin: 3rem;
   display: inline-block;
   overflow: hidden;
@@ -32,7 +37,7 @@
   text-transform: uppercase;
 }
 
-.description-lastname-inner {
+.header-lastname-inner {
   display: inline-block;
   white-space: nowrap;
   transform: translate(-75%,0) rotate(90deg);
@@ -40,19 +45,8 @@
   font-size: var(--font-size-headline);
 }
 
-.description-lastname-inner:after {
+.header-lastname-inner:after {
   content: "";
   float: left;
   margin-top: 100%;
-}
-
-/* slogan */
-
-.description-slogan {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  margin: 3rem;
-  max-width: 600px;
-  font-size: var(--font-size-title);
 }
