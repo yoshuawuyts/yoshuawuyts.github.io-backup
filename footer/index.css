@@ -5,6 +5,7 @@
 .footer-inner {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 /* slogan */
@@ -12,14 +13,15 @@
 .footer-slogan {
   margin: 3rem;
   width: 600px;
-  font-size: var(--font-size-title);
+  font-size: var(--font-size-headline);
 }
 
 /* nav */
 
 .footer-nav {
   margin: 3rem;
-  font-size: var(--font-size-title);
+  text-align: right;
+  font-size: var(--font-size-headline);
   font-family: 'museo-sans', 'sans-serif';
   font-weight: normal;
 }
