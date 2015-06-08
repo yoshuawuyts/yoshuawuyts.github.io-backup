@@ -11,7 +11,7 @@
 /* slogan */
 
 .footer-slogan {
-  margin: var(--margin-body);
+  padding: var(--layout-body-padding);
   max-width: 600px;
   font-size: var(--font-size-headline);
 }
@@ -28,14 +28,14 @@
 }
 
 .footer-nav {
-  margin: var(--margin-body);
+  padding: var(--layout-body-padding);
   text-align: right;
   font-size: var(--font-size-headline);
-  font-family: var(--font-family-body);
+  font-family: var(--font-body);
 }
 
 .footer-nav-inner > li {
-  margin-right: calc(-100% - calc(3 * var(--margin-body)));
+  margin-right: calc(-100% - calc(3 * var(--layout-body-padding)));
   animation: slide-right-left .5s ease-in-out forwards;
 }
 
