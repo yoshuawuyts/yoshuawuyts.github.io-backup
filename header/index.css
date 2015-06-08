@@ -31,11 +31,13 @@
 }
 
 .header-firstname-inner {
+  line-height: .84em;
   transform: translate(0,100%) rotate(-90deg);
   transform-origin: 0 0;
 }
 
 .header-lastname-inner {
+  line-height: 0.572em;
   transform: translate(-75%,0) rotate(90deg);
   transform-origin: 1 1;
 }
