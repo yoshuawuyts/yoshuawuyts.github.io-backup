@@ -1,7 +1,11 @@
 :root {
+  --font-family-body: 'museo-sans', 'sans-serif';
+
   --font-size-huge: 6rem;
   --font-size-headline: 4rem;
   --font-size-title: 3rem;
   --font-size-subtitle: 1.5rem;
   --font-size-body: 1rem;
+
+  --margin-body: 3rem;
 }

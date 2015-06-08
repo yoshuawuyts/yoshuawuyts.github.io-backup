@@ -11,17 +11,34 @@
 /* slogan */
 
 .footer-slogan {
-  margin: 3rem;
-  width: 600px;
+  margin: var(--margin-body);
+  max-width: 600px;
   font-size: var(--font-size-headline);
 }
 
 /* nav */
 
+@keyframes slide-right-left {
+  0% {
+    margin-right: -100%;
+  }
+  100% {
+    margin-right: 0;
+  }
+}
+
 .footer-nav {
-  margin: 3rem;
+  margin: var(--margin-body);
   text-align: right;
   font-size: var(--font-size-headline);
-  font-family: 'museo-sans', 'sans-serif';
-  font-weight: normal;
+  font-family: var(--font-family-body);
 }
+
+.footer-nav-inner > li {
+  margin-right: calc(-100% - calc(3 * var(--margin-body)));
+  animation: slide-right-left .5s ease-in-out forwards;
+}
+
+.footer-nav-inner > li:nth-child(1) { animation-delay: 0.1s }
+.footer-nav-inner > li:nth-child(2) { animation-delay: 0.4s }
+.footer-nav-inner > li:nth-child(3) { animation-delay: 0.7s }
