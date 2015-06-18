@@ -4,5 +4,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 15px #000 solid;
   background-color: honeydew;
 }
