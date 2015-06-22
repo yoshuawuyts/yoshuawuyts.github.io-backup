@@ -1,6 +1,8 @@
 @import 'css-wipe';
-@import './variables.css';
 
+@import './variables.css';
 @import './base.css';
+@import './typography.css';
+
 @import '../header/index.css';
 @import '../footer/index.css';
