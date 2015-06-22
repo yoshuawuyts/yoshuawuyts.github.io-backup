@@ -1,13 +1,12 @@
 /* header */
 
 .header {
-  width: 100vw;
+  width: calc(100vw - calc(2 * var(--layout-body-border)));
 }
 
 .header-inner  {
   display: flex;
   justify-content: space-between;
-  width: 100vw;
 }
 
 .header-name {

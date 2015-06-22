@@ -1,9 +1,9 @@
 body {
   /* todo: change to video, remove this color */
-  height: 100vh;
+  height: calc(100vh - calc(2 * var(--layout-body-border)));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 15px #000 solid;
+  border: var(--layout-body-border) #000 solid;
   background-color: honeydew;
 }
