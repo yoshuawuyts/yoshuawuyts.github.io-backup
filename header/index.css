@@ -40,6 +40,8 @@
   }
 }
 
+/* left / right specific styles */
+
 @media all and (--lap), (--desk), (--wall) {
   .header-firstname-inner {
     line-height: .84em;
