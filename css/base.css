@@ -3,6 +3,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: var(--layout-body-border) #000 solid;
-  background-color: honeydew;
+  border: var(--layout-body-border) var(--color-dark) solid;
+  background-color: var(--color-main);
 }
