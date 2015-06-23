@@ -1,7 +1,6 @@
 {
   "name": "about",
   "version": "1.0.11",
-  "description": "about",
   "main": "index.js",
   "scripts": {
     "build": "node ./bin/cli build",
@@ -14,14 +13,21 @@
     "test": "standard && NODE_ENV=test node test",
     "test-cov": "standard && NODE_ENV=test istanbul cover test.js"
   },
-  "repository": "yoshuawuyts/about",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
   "license": "MIT",
   "dependencies": {
     "@about/background-video": "file:background-video",
     "css-wipe": "^1.0.1",
+    "hash-match": "^1.0.1",
+    "wayfarer": "^4.1.1",
     "webcomponents.js": "^0.7.2"
   },
   "devDependencies": {
+    "babelify": "^6.1.2",
     "brick-router": "^2.1.1",
     "brick-server": "^1.0.0",
     "browserify": "^10.2.3",
@@ -37,10 +43,5 @@
     "standard": "^4.0.1",
     "tape": "^4.0.0",
     "watchify": "^3.2.1"
-  },
-  "files": [
-    "LICENSE",
-    "index.js",
-    "README.md"
-  ]
+  }
 }
