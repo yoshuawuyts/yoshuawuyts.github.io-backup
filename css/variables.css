@@ -17,4 +17,15 @@
   --layout-body-border: 1rem;
   --layout-body-height: calc(100vh - calc(2 * var(--layout-body-border)));
   --layout-body-width: calc(100vw - calc(2 * var(--layout-body-border)));
+
+  --animation-menu-in: slide-right-left .5s ease-in-out forwards;
+}
+
+@keyframes slide-right-left {
+  0% {
+    margin-right: -100%;
+  }
+  100% {
+    margin-right: 0;
+  }
 }

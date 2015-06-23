@@ -2,6 +2,7 @@
 
 .header {
   width: var(--layout-body-width);
+  z-index: var(--z-index-top);
 }
 
 .header-inner  {
@@ -29,14 +30,26 @@
   margin-top: 100%;
 }
 
-.header-firstname-inner {
-  line-height: .84em;
-  transform: translate(0,100%) rotate(-90deg);
-  transform-origin: 0 0;
+@media all and (--wrist), (--palm) {
+  .header-name-inner {
+    visibility: hidden;
+  }
+
+  .header-name-inner:first-letter {
+    visibility: visible;
+  }
 }
 
-.header-lastname-inner {
-  line-height: 0.572em;
-  transform: translate(-75%,0) rotate(90deg);
-  transform-origin: 1 1;
+@media all and (--lap), (--desk), (--wall) {
+  .header-firstname-inner {
+    line-height: .84em;
+    transform: translate(0,100%) rotate(-90deg);
+    transform-origin: 0 0;
+  }
+
+  .header-lastname-inner {
+    line-height: 0.572em;
+    transform: translate(-75%,0) rotate(90deg);
+    transform-origin: 1 1;
+  }
 }

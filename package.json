@@ -22,6 +22,7 @@
   "dependencies": {
     "@about/background-video": "file:background-video",
     "css-wipe": "^1.0.1",
+    "ergonomic-breakpoint": "^1.1.0",
     "hash-match": "^1.0.1",
     "wayfarer": "^4.1.1",
     "webcomponents.js": "^0.7.2"

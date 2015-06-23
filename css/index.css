@@ -1,4 +1,5 @@
 @import 'css-wipe';
+@import 'ergonomic-breakpoint';
 
 @import './variables.css';
 @import './base.css';

@@ -3,6 +3,12 @@
   z-index: var(--z-index-top);
 }
 
+@media all and (--wrist), (--palm) {
+  .footer {
+    display: none;
+  }
+}
+
 .footer-inner {
   display: flex;
   justify-content: space-between;
@@ -18,16 +24,19 @@
   font-size: var(--font-size-headline);
 }
 
-/* nav */
-
-@keyframes slide-right-left {
-  0% {
-    margin-right: -100%;
-  }
-  100% {
-    margin-right: 0;
+@media all and (--wrist), (--palm) {
+  .footer-slogan {
+    width: 300px;
   }
 }
+
+@media all and (--wrist) {
+  .footer-slogan {
+    font-size: var(--font-size-title);
+  }
+}
+
+/* nav */
 
 .footer-nav {
   padding: var(--layout-body-padding);
@@ -38,7 +47,7 @@
 
 .footer-nav-inner > li {
   margin-right: calc(-100% - calc(3 * var(--layout-body-padding)));
-  animation: slide-right-left .5s ease-in-out forwards;
+  animation: var(--animation-menu-in);
 }
 
 .footer-nav-inner > li > a { color: var(--color-dark); }
