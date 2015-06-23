@@ -10,4 +10,8 @@
 
   --layout-body-padding: 3rem;
   --layout-body-border: 1rem;
+  --layout-body-height: calc(100vh - calc(2 * var(--layout-body-border)));
+  --layout-body-width: calc(100vw - calc(2 * var(--layout-body-border)));
+
+  --z-index-top: 1;
 }

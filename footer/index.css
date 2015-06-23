@@ -1,10 +1,12 @@
 .footer {
   flex: none;
+  z-index: var(--z-index-top);
 }
 
 .footer-inner {
   display: flex;
   justify-content: space-between;
+  flex-direction: row-reverse;
   align-items: flex-end;
 }
 

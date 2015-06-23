@@ -1,7 +1,7 @@
 /* header */
 
 .header {
-  width: calc(100vw - calc(2 * var(--layout-body-border)));
+  width: var(--layout-body-width);
 }
 
 .header-inner  {

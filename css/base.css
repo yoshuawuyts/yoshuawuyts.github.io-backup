@@ -1,6 +1,5 @@
 body {
-  /* todo: change to video, remove this color */
-  height: calc(100vh - calc(2 * var(--layout-body-border)));
+  height: var(--layout-body-height);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
