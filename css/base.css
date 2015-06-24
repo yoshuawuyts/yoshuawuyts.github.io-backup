@@ -23,6 +23,5 @@ body {
 }
 
 .main-inner > section {
-  height: var(--layout-body-height);
   width: var(--layout-body-width);
 }

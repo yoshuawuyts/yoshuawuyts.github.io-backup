@@ -1,3 +1,6 @@
+.view-video {
+  height: var(--layout-body-height);
+}
 /* video-inner */
 
 @media all and (--wrist), (--palm) {

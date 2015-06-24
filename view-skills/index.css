@@ -1,6 +1,10 @@
+.view-skills {
+  width: var(--layout-body-width);
+}
 .view-skills-inner {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: var(--layout-body-padding);
 }
 
@@ -8,5 +12,23 @@
   font-size: var(--font-size-headline);
   text-transform: uppercase;
   transform: var(--transform-skew-header);
-  text-decoration: underline
+  text-decoration: underline;
+}
+
+.view-skills-inner > ul {
+  margin-top: var(--layout-body-padding);
+  text-align: center;
+}
+
+.view-skills-inner > ul > li:not(:first-child) {
+  margin-top: var(--layout-body-padding);
+}
+
+.view-skills-heading {
+  font-size: var(--font-size-subtitle);
+}
+
+.view-skills-content {
+  margin-top: var(--layout-main-spacing);
+  font-size: var(--font-size-body);
 }

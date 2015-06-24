@@ -8,8 +8,8 @@
   --font-size-huge: 6rem;
   --font-size-headline: 4rem;
   --font-size-title: 3rem;
-  --font-size-subtitle: 1.5rem;
-  --font-size-body: 1rem;
+  --font-size-subtitle: 3.5rem;
+  --font-size-body: 1.5rem;
 
   --z-index-top: 1;
 
@@ -17,6 +17,10 @@
   --layout-body-border: 1rem;
   --layout-body-height: calc(100vh - calc(2 * var(--layout-body-border)));
   --layout-body-width: calc(100vw - calc(2 * var(--layout-body-border)));
+
+  --layout-main-padding: var(--layout-body-padding);
+  --layout-main-width: 430px;
+  --layout-main-spacing: calc(var(--layout-main-padding) / 2);
 
   --transform-skew-header: rotate(-10deg) skew(-10deg, 0);
 
