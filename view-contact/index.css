@@ -1,0 +1,13 @@
+.view-contact-inner {
+  display: flex;
+  justify-content: center;
+  padding: var(--layout-body-padding);
+}
+
+.view-contact-inner > h1 {
+  font-size: var(--font-size-headline);
+  text-transform: uppercase;
+  transform: var(--transform-skew-header);
+  text-decoration: underline
+}
+

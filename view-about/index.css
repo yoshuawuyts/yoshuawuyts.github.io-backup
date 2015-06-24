@@ -1,0 +1,13 @@
+.view-about-inner {
+  display: flex;
+  justify-content: center;
+  padding: var(--layout-body-padding);
+}
+
+.view-about-inner > h1 {
+  font-size: var(--font-size-headline);
+  text-transform: uppercase;
+  transform: var(--transform-skew-header);
+  text-decoration: underline
+}
+
