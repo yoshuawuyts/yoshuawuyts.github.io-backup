@@ -5,6 +5,7 @@
 .header {
   width: var(--layout-body-width);
   z-index: var(--z-index-top);
+  position: fixed;
 }
 
 .header-inner  {

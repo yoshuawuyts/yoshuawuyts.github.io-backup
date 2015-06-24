@@ -1,0 +1,23 @@
+/* tagline */
+
+.view-video-tagline {
+  position: absolute;
+  bottom: var(--layout-body-border);
+  padding: var(--layout-body-padding);
+  max-width: 600px;
+  font-size: var(--font-size-headline);
+}
+
+@media all and (--wrist), (--palm) {
+  .view-video-tagline {
+    width: 300px;
+    text-align: center;
+  }
+}
+
+@media all and (--wrist) {
+  .view-video-tagline {
+    font-size: var(--font-size-title);
+  }
+}
+

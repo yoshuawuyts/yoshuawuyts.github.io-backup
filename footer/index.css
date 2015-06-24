@@ -1,5 +1,8 @@
 .footer {
+  position: fixed;
   flex: none;
+  right: var(--layout-body-border);
+  bottom: var(--layout-body-border);
   z-index: var(--z-index-top);
 }
 
@@ -14,26 +17,6 @@
   justify-content: space-between;
   flex-direction: row-reverse;
   align-items: flex-end;
-}
-
-/* slogan */
-
-.footer-slogan {
-  padding: var(--layout-body-padding);
-  max-width: 600px;
-  font-size: var(--font-size-headline);
-}
-
-@media all and (--wrist), (--palm) {
-  .footer-slogan {
-    width: 300px;
-  }
-}
-
-@media all and (--wrist) {
-  .footer-slogan {
-    font-size: var(--font-size-title);
-  }
 }
 
 /* nav */

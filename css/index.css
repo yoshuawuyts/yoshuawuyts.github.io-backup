@@ -7,4 +7,5 @@
 
 @import '../header/index.css';
 @import '../footer/index.css';
-@import '../main/index.css';
+
+@import '../view-video/index.css';
