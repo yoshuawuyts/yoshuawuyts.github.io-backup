@@ -1,0 +1,12 @@
+.view-skills-inner {
+  display: flex;
+  justify-content: center;
+  padding: var(--layout-body-padding);
+}
+
+.view-skills-inner > h1 {
+  font-size: var(--font-size-headline);
+  text-transform: uppercase;
+  transform: var(--transform-skew-header);
+  text-decoration: underline
+}

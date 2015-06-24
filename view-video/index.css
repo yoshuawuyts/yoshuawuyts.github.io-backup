@@ -1,7 +1,7 @@
 /* video-inner */
 
 @media all and (--wrist), (--palm) {
-  .section-video-inner {
+  .view-video-inner {
     display: flex;
     justify-content: center;
     align-items: flex-end;
