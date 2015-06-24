@@ -1,3 +1,5 @@
+@custom-media --local-header-height (max-height: 40rem);
+
 /* header */
 
 .header {
@@ -30,7 +32,7 @@
   margin-top: 100%;
 }
 
-@media all and (--wrist), (--palm) {
+@media all and (--wrist), (--palm), (--local-header-height) {
   .header-name-inner {
     visibility: hidden;
   }
