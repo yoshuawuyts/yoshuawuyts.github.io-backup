@@ -1,3 +1,15 @@
+/* video-inner */
+
+@media all and (--wrist), (--palm) {
+  .section-video-inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+  }
+}
+
 /* tagline */
 
 .view-video-tagline {
@@ -10,8 +22,9 @@
 
 @media all and (--wrist), (--palm) {
   .view-video-tagline {
-    width: 300px;
+    position: initial;
     text-align: center;
+    width: 300px;
   }
 }
 

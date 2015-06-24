@@ -8,6 +8,12 @@
   position: fixed;
 }
 
+@media all and (--wrist), (--palm) {
+  .header {
+    position: absolute;
+  }
+}
+
 .header-inner  {
   display: flex;
   justify-content: space-between;
