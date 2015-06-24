@@ -18,6 +18,8 @@
   --layout-body-height: calc(100vh - calc(2 * var(--layout-body-border)));
   --layout-body-width: calc(100vw - calc(2 * var(--layout-body-border)));
 
+  --transform-skew-header: rotate(-10deg) skew(-10deg, 0);
+
   --animation-menu-in: slide-right-left .5s ease-in-out forwards;
 }
 
