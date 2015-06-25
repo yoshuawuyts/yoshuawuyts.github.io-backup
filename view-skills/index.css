@@ -1,6 +1,7 @@
 .view-skills {
   width: var(--layout-body-width);
 }
+
 .view-skills-inner {
   display: flex;
   flex-direction: column;
@@ -30,5 +31,7 @@
 
 .view-skills-content {
   margin-top: var(--layout-main-spacing);
+  max-width: var(--layout-main-width);
   font-size: var(--font-size-body);
+  text-align: justify;
 }

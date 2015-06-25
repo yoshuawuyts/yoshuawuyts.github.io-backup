@@ -6,9 +6,10 @@
   width: var(--layout-body-width);
   z-index: var(--z-index-top);
   position: fixed;
+  pointer-events: none;
 }
 
-@media all and (--wrist), (--palm) {
+@media all and (--wrist), (--palm), (--local-header-height) {
   .header {
     position: absolute;
   }
@@ -51,7 +52,7 @@
 
 /* left / right specific styles */
 
-@media all and (--lap), (--desk), (--wall) {
+@media all and (--lap), (--desk), (--wall) and (--local-header-height) {
   .header-firstname-inner {
     line-height: .84em;
     transform: translate(0,100%) rotate(-90deg);
