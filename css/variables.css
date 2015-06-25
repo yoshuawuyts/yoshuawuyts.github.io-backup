@@ -1,5 +1,6 @@
 :root {
   --color-main: honeydew;
+  --color-light: white;
   --color-dark: #000;
 
   --font-head: 'museo-sans', sans-serif;
@@ -21,6 +22,8 @@
   --layout-main-padding: var(--layout-body-padding);
   --layout-main-width: 430px;
   --layout-main-spacing: calc(var(--layout-main-padding) / 2);
+
+  --layout-video-gradient-height: var(--layout-body-padding);
 
   --transform-skew-header: rotate(-10deg) skew(-10deg, 0);
 

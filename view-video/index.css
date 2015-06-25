@@ -1,6 +1,21 @@
+/* view */
+
 .view-video {
-  height: var(--layout-body-height);
+  height: calc(100vh - var(--layout-body-border) + var(--layout-video-gradient-height));
+  background-color: var(--color-light);
+  background-image: url("http://placehold.it/1244x485");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
+
+@media all and (--wrist), (--palm) {
+  .view-video {
+    background-image: none;
+    background-color: var(--color-main);
+  }
+}
+
 /* video-inner */
 
 @media all and (--wrist), (--palm) {
@@ -20,6 +35,7 @@
   bottom: var(--layout-body-border);
   padding: var(--layout-body-padding);
   max-width: 600px;
+  z-index: var(--z-index-top);
   font-size: var(--font-size-headline);
 }
 
@@ -27,6 +43,8 @@
   .view-video-tagline {
     position: initial;
     text-align: center;
+    bottom: calc(var(--layout-body-border) - var(--layout-video-gradient-height));
+    margin-bottom: var(--layout-video-gradient-height);
     width: 300px;
   }
 }
@@ -37,3 +55,12 @@
   }
 }
 
+/* gradient */
+
+.view-video-gradient {
+  position: absolute;
+  bottom: -var(--layout-video-gradient-height);
+  height: calc(25vh + var(--layout-video-gradient-height));
+  width: var(--layout-body-width);
+  background: linear-gradient(hsla(0, 0%, 0%, 0), honeydew);
+}
