@@ -1,6 +1,11 @@
+.view-about {
+  width: var(--layout-body-width);
+}
+
 .view-about-inner {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: var(--layout-body-padding);
 }
 
@@ -11,3 +16,13 @@
   text-decoration: underline
 }
 
+.view-about-inner > p {
+  margin-top: calc(var(--layout-main-spacing) * 2);
+  max-width: var(--layout-main-width);
+  font-size: var(--font-size-body);
+  text-align: justify;
+}
+
+.view-about-heading {
+  font-size: var(--font-size-subtitle);
+}
