@@ -40,3 +40,10 @@ router.on('/index.html', function (cb) {
   const htmlstream = fs.createReadStream(htmlloc)
   cb(null, htmlstream)
 })
+
+// images
+router.on('/background.jpg', function (cb) {
+  const jpgloc = path.join(root, '2.jpg')
+  const jpgstream = fs.createReadStream(jpgloc)
+  cb(null, jpgstream)
+})

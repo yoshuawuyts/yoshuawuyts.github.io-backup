@@ -2,8 +2,8 @@
 
 .view-video {
   height: calc(100vh - var(--layout-body-border) + var(--layout-video-gradient-height));
-  background-color: var(--color-light);
-  background-image: url("http://placehold.it/1244x485");
+  background-color: var(--color-main);
+  /* background-image: url("http://localhost:1337/background.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;

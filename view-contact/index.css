@@ -1,6 +1,11 @@
+.view-contact {
+  width: var(--layout-body-width);
+}
+
 .view-contact-inner {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: var(--layout-body-padding);
 }
 
@@ -11,3 +16,14 @@
   text-decoration: underline
 }
 
+.view-contact-inner > a,
+.view-contact-inner > p {
+  margin-top: calc(var(--layout-main-spacing) * 2);
+  max-width: var(--layout-main-width);
+  font-size: var(--font-size-body);
+  text-align: justify;
+}
+
+.view-contact-heading {
+  font-size: var(--font-size-subtitle);
+}
