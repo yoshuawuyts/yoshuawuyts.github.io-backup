@@ -24,7 +24,8 @@
     "css-wipe": "^1.0.1",
     "ergonomic-breakpoint": "^1.1.0",
     "hash-match": "^1.0.1",
-    "wayfarer": "^4.1.1",
+    "scroll-to-element": "0.0.2",
+    "sliced": "0.0.5",
     "webcomponents.js": "^0.7.2"
   },
   "devDependencies": {
