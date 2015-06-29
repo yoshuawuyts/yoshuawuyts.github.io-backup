@@ -24,6 +24,12 @@
   text-align: justify;
 }
 
+@media all and (--wrist), (--palm) {
+  .view-contact-inner > p {
+    text-align: center;
+  }
+}
+
 .view-contact-heading {
   font-size: var(--font-size-subtitle);
 }
