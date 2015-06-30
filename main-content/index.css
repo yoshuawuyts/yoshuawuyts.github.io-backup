@@ -1,50 +1,36 @@
 /* wrapper */
 
-.view-about,
-.view-contact,
-.view-skills {
+.view-section {
   width: var(--layout-body-width);
 }
 
 /* inner */
 
-.view-about-inner,
-.view-contact-inner,
-.view-skills-inner {
+.view-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: var(--layout-body-padding);
 }
 
-.view-contact-inner > h1,
-.view-skills-inner > h1 {
-  font-size: var(--font-size-headline);
-  text-transform: uppercase;
-  transform: var(--transform-skew-header);
-  text-decoration: underline;
-}
-
-.view-skills-inner > ul {
+.view-inner > ul {
   margin-top: var(--layout-body-padding);
   text-align: center;
 }
 
-.view-skills-inner > ul > li:not(:first-child) {
+.view-inner > ul > li:not(:first-child) {
   margin-top: var(--layout-body-padding);
 }
 
-.view-about-inner > h1,
-.view-contact-inner > h1 {
+.view-inner > h1 {
   font-size: var(--font-size-headline);
   text-transform: uppercase;
   transform: var(--transform-skew-header);
   text-decoration: underline
 }
 
-.view-about-inner > a,
-.view-contact-inner > a,
-.view-contact-inner > p {
+.view-inner > a,
+.view-inner > p {
   margin-top: calc(var(--layout-main-spacing) * 2);
   max-width: var(--layout-main-width);
   font-size: var(--font-size-body);
@@ -52,22 +38,20 @@
 }
 
 @media all and (--wrist), (--palm) {
-  .view-contact-inner > p {
+  .view-inner > p {
     text-align: center;
   }
 }
 
 /* heading */
 
-.view-about-heading,
-.view-contact-heading,
-.view-skills-heading {
+.view-subtitle {
   font-size: var(--font-size-subtitle);
 }
 
 /* content */
 
-.view-skills-content {
+.view-content {
   margin-top: var(--layout-main-spacing);
   max-width: var(--layout-main-width);
   font-size: var(--font-size-body);
