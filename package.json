@@ -23,6 +23,7 @@
     "@about/background-video": "file:background-video",
     "css-wipe": "^1.0.1",
     "ergonomic-breakpoint": "^1.1.0",
+    "get-anchor": "^1.0.1",
     "hash-match": "^1.0.1",
     "scroll-to-element": "0.0.2",
     "sliced": "0.0.5",

@@ -1,4 +1,5 @@
 const scrollTo = require('scroll-to-element')
+const getAnchor = require('get-anchor')
 const sliced = require('sliced')
 
 module.exports = register
@@ -16,20 +17,6 @@ function register () {
 // to the right position
 // null -> null
 function clickHandler (e) {
-  const el = e.srcElement.hash.replace(/#/, '')
-  const res = findAnchor(el)
+  const res = getAnchor(e.srcElement.hash, '.anchor')
   if (res) scrollTo(res, { offset: -50, duration: 700 })
-}
-
-// find an anchor by name
-// (str, str) -> DOMNode|Null
-function findAnchor (name, className) {
-  className = className || 'anchor'
-  className = className.replace(/\./, '')
-  name = name.replace(/\//, '')
-
-  const selector = '.' + className + '[href="#' + name + '"]'
-  const tags = document.querySelectorAll(selector)
-  if (tags.length !== 1) return
-  return tags[0]
 }
