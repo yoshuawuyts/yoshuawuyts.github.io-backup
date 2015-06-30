@@ -1,7 +1,15 @@
+/* wrapper */
+
+.view-about,
+.view-contact,
 .view-skills {
   width: var(--layout-body-width);
 }
 
+/* inner */
+
+.view-about-inner,
+.view-contact-inner,
 .view-skills-inner {
   display: flex;
   flex-direction: column;
@@ -9,6 +17,7 @@
   padding: var(--layout-body-padding);
 }
 
+.view-contact-inner > h1,
 .view-skills-inner > h1 {
   font-size: var(--font-size-headline);
   text-transform: uppercase;
@@ -25,9 +34,38 @@
   margin-top: var(--layout-body-padding);
 }
 
+.view-about-inner > h1,
+.view-contact-inner > h1 {
+  font-size: var(--font-size-headline);
+  text-transform: uppercase;
+  transform: var(--transform-skew-header);
+  text-decoration: underline
+}
+
+.view-about-inner > a,
+.view-contact-inner > a,
+.view-contact-inner > p {
+  margin-top: calc(var(--layout-main-spacing) * 2);
+  max-width: var(--layout-main-width);
+  font-size: var(--font-size-body);
+  text-align: justify;
+}
+
+@media all and (--wrist), (--palm) {
+  .view-contact-inner > p {
+    text-align: center;
+  }
+}
+
+/* heading */
+
+.view-about-heading,
+.view-contact-heading,
 .view-skills-heading {
   font-size: var(--font-size-subtitle);
 }
+
+/* content */
 
 .view-skills-content {
   margin-top: var(--layout-main-spacing);
