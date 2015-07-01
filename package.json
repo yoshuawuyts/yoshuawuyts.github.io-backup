@@ -9,7 +9,7 @@
     "postversion": "npm run build && gh-pages -d ./dist && npm run clean && echo 'done'",
     "prepublish": "if [[ $NODE_ENV != 'production' ]]; then npm run dev; fi",
     "preversion": "npm run clean",
-    "start": "node ./bin/cli start -p 1337 | garnish",
+    "start": "NODE_ENV=development node ./bin/cli start -p 1337 | garnish",
     "test": "standard && NODE_ENV=test node test",
     "test-cov": "standard && NODE_ENV=test istanbul cover test.js"
   },
