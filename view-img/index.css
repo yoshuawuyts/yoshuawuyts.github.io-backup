@@ -34,7 +34,7 @@
   position: absolute;
   bottom: var(--layout-body-border);
   padding: var(--layout-body-padding);
-  max-width: 600px;
+  max-width: var(--layout-video-tagline-width);
   z-index: var(--z-index-top);
   font-size: var(--font-size-headline);
 }

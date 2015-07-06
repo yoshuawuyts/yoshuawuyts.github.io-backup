@@ -34,6 +34,8 @@
   margin-top: calc(var(--layout-main-spacing) * 2);
   max-width: var(--layout-main-width);
   font-size: var(--font-size-body);
+  line-height: calc(var(--font-size-body) * 1.4);
+  letter-spacing: -0.02rem;
   text-align: justify;
 }
 
@@ -55,5 +57,7 @@
   margin-top: var(--layout-main-spacing);
   max-width: var(--layout-main-width);
   font-size: var(--font-size-body);
+  line-height: 1.4;
+  letter-spacing: -0.02rem;
   text-align: justify;
 }

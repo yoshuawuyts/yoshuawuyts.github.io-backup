@@ -10,7 +10,7 @@
   --font-size-headline: 4rem;
   --font-size-title: 3rem;
   --font-size-subtitle: 3.5rem;
-  --font-size-body: 1.5rem;
+  --font-size-body: 1.25rem;
 
   --z-index-top: 1;
 
@@ -20,10 +20,11 @@
   --layout-body-width: calc(100vw - calc(2 * var(--layout-body-border)));
 
   --layout-main-padding: var(--layout-body-padding);
-  --layout-main-width: 600px;
+  --layout-main-width: 500px;
   --layout-main-spacing: calc(var(--layout-main-padding) / 2);
 
   --layout-video-gradient-height: var(--layout-body-padding);
+  --layout-video-tagline-width: 600px;
 
   --transform-skew-header: rotate(-10deg) skew(-10deg, 0);
 
