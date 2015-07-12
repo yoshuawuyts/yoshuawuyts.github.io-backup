@@ -23,8 +23,8 @@
   --layout-main-width: 500px;
   --layout-main-spacing: calc(var(--layout-main-padding) / 2);
 
-  --layout-video-gradient-height: var(--layout-body-padding);
-  --layout-video-tagline-width: 600px;
+  --layout-img-gradient-height: var(--layout-body-padding);
+  --layout-img-tagline-width: 600px;
 
   --transform-skew-header: rotate(-10deg) skew(-10deg, 0);
 

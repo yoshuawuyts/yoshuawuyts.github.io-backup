@@ -1,7 +1,7 @@
 /* view */
 
-.view-video {
-  height: calc(100vh - var(--layout-body-border) + var(--layout-video-gradient-height));
+.view-img {
+  height: calc(100vh - var(--layout-body-border) + var(--layout-img-gradient-height));
   background-color: var(--color-main);
   /* background-image: url("http://localhost:1337/background.jpg"); */
   background-size: cover;
@@ -10,16 +10,16 @@
 }
 
 @media all and (--wrist), (--palm) {
-  .view-video {
+  .view-img {
     background-image: none;
     background-color: var(--color-main);
   }
 }
 
-/* video-inner */
+/* img-inner */
 
 @media all and (--wrist), (--palm) {
-  .view-video-inner {
+  .view-img-inner {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -30,37 +30,37 @@
 
 /* tagline */
 
-.view-video-tagline {
+.view-img-tagline {
   position: absolute;
   bottom: var(--layout-body-border);
   padding: var(--layout-body-padding);
-  max-width: var(--layout-video-tagline-width);
+  max-width: var(--layout-img-tagline-width);
   z-index: var(--z-index-top);
   font-size: var(--font-size-headline);
 }
 
 @media all and (--wrist), (--palm) {
-  .view-video-tagline {
+  .view-img-tagline {
     position: initial;
     text-align: center;
-    bottom: calc(var(--layout-body-border) - var(--layout-video-gradient-height));
-    margin-bottom: var(--layout-video-gradient-height);
+    bottom: calc(var(--layout-body-border) - var(--layout-img-gradient-height));
+    margin-bottom: var(--layout-img-gradient-height);
     width: 300px;
   }
 }
 
 @media all and (--wrist) {
-  .view-video-tagline {
+  .view-img-tagline {
     font-size: var(--font-size-title);
   }
 }
 
 /* gradient */
 
-.view-video-gradient {
+.view-img-gradient {
   position: absolute;
-  bottom: -var(--layout-video-gradient-height);
-  height: calc(25vh + var(--layout-video-gradient-height));
+  bottom: -var(--layout-img-gradient-height);
+  height: calc(25vh + var(--layout-img-gradient-height));
   width: var(--layout-body-width);
   background: linear-gradient(hsla(0, 0%, 0%, 0), honeydew);
 }
