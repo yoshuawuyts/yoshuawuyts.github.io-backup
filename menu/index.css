@@ -1,4 +1,4 @@
-.footer {
+.menu {
   position: fixed;
   flex: none;
   right: var(--layout-body-border);
@@ -7,12 +7,12 @@
 }
 
 @media all and (--wrist), (--palm) {
-  .footer {
+  .menu {
     display: none;
   }
 }
 
-.footer-inner {
+.menu-inner {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
@@ -21,20 +21,20 @@
 
 /* nav */
 
-.footer-nav {
+.menu-nav {
   padding: var(--layout-body-padding);
   text-align: right;
   font-size: var(--font-size-headline);
   font-family: var(--font-body);
 }
 
-.footer-nav-inner > li {
+.menu-nav-inner > li {
   margin-right: calc(-100% - calc(3 * var(--layout-body-padding)));
   animation: var(--animation-menu-in);
 }
 
-.footer-nav-inner > li > a { color: var(--color-dark); }
+.menu-nav-inner > li > a { color: var(--color-dark); }
 
-.footer-nav-inner > li:nth-child(1) { animation-delay: 0.1s; }
-.footer-nav-inner > li:nth-child(2) { animation-delay: 0.4s; }
-.footer-nav-inner > li:nth-child(3) { animation-delay: 0.7s; }
+.menu-nav-inner > li:nth-child(1) { animation-delay: 0.1s; }
+.menu-nav-inner > li:nth-child(2) { animation-delay: 0.4s; }
+.menu-nav-inner > li:nth-child(3) { animation-delay: 0.7s; }

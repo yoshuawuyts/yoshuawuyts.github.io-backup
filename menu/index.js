@@ -7,7 +7,7 @@ module.exports = register
 // register click listeners
 // null -> null
 function register () {
-  const els = document.querySelectorAll('.footer-nav-inner a')
+  const els = document.querySelectorAll('.menu-nav-inner a')
   sliced(els).forEach((el) => {
     el.addEventListener('click', clickHandler)
   })
