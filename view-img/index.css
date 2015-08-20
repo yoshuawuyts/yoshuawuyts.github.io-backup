@@ -2,11 +2,11 @@
 
 .view-img {
   height: var(--layout-body-height);
-  background-color: var(--color-main);
+  background-color: var(--color-light);
   background-image: url("http://localhost:1337/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 55%;
 }
 
 @media all and (--wrist), (--palm) {
