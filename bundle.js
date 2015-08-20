@@ -1109,229 +1109,103 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/util/support/isBufferBrowser.js","_process":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/process/browser.js","inherits":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/inherits/inherits_browser.js"}],"/Users/yw/src/yw/about/node_modules/component-clone/index.js":[function(require,module,exports){
+},{"./support/isBuffer":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/util/support/isBufferBrowser.js","_process":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/process/browser.js","inherits":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/inherits/inherits_browser.js"}],"/Users/yw/src/yw/about/node_modules/get-anchor/index.js":[function(require,module,exports){
+const assert = require('assert')
+
+module.exports = getAnchor
+
+// find an anchor by href
+// and optional query
+// (str, str) -> DOMNode|Null
+function getAnchor (href, query) {
+  assert.ok(href)
+  href = href.replace(/^\//, '').replace(/^#/, '')
+
+  const selector = query
+    ? query + '[href="#' + href + '"]'
+    : '[href="#' + href + '"]'
+
+  return document.querySelector(selector)
+}
+
+},{"assert":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/assert/assert.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/index.js":[function(require,module,exports){
+var scroll = require('scroll-to');
+
+module.exports = function (elem, options) {
+  options = options || {};
+  if (typeof elem === 'string') elem = document.querySelector(elem);
+  if (elem) scroll(0, elem.offsetTop + (options.offset || 0), options);
+};
+
+},{"scroll-to":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/index.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/index.js":[function(require,module,exports){
 /**
  * Module dependencies.
  */
 
-var type;
-try {
-  type = require('component-type');
-} catch (_) {
-  type = require('type');
-}
+var Tween = require('tween');
+var raf = require('raf');
 
 /**
- * Module exports.
+ * Expose `scrollTo`.
  */
 
-module.exports = clone;
+module.exports = scrollTo;
 
 /**
- * Clones objects.
+ * Scroll to `(x, y)`.
  *
- * @param {Mixed} any object
+ * @param {Number} x
+ * @param {Number} y
  * @api public
  */
 
-function clone(obj){
-  switch (type(obj)) {
-    case 'object':
-      var copy = {};
-      for (var key in obj) {
-        if (obj.hasOwnProperty(key)) {
-          copy[key] = clone(obj[key]);
-        }
-      }
-      return copy;
+function scrollTo(x, y, options) {
+  options = options || {};
 
-    case 'array':
-      var copy = new Array(obj.length);
-      for (var i = 0, l = obj.length; i < l; i++) {
-        copy[i] = clone(obj[i]);
-      }
-      return copy;
+  // start position
+  var start = scroll();
 
-    case 'regexp':
-      // from millermedeiros/amd-utils - MIT
-      var flags = '';
-      flags += obj.multiline ? 'm' : '';
-      flags += obj.global ? 'g' : '';
-      flags += obj.ignoreCase ? 'i' : '';
-      return new RegExp(obj.source, flags);
+  // setup tween
+  var tween = Tween(start)
+    .ease(options.ease || 'out-circ')
+    .to({ top: y, left: x })
+    .duration(options.duration || 1000);
 
-    case 'date':
-      return new Date(obj.getTime());
+  // scroll
+  tween.update(function(o){
+    window.scrollTo(o.left | 0, o.top | 0);
+  });
 
-    default: // string, number, boolean, …
-      return obj;
+  // handle end
+  tween.on('end', function(){
+    animate = function(){};
+  });
+
+  // animate
+  function animate() {
+    raf(animate);
+    tween.update();
   }
+
+  animate();
+  
+  return tween;
 }
 
-},{"component-type":"/Users/yw/src/yw/about/node_modules/component-type/index.js","type":"/Users/yw/src/yw/about/node_modules/component-type/index.js"}],"/Users/yw/src/yw/about/node_modules/component-emitter/index.js":[function(require,module,exports){
-
 /**
- * Expose `Emitter`.
- */
-
-module.exports = Emitter;
-
-/**
- * Initialize a new `Emitter`.
+ * Return scroll position.
  *
- * @api public
- */
-
-function Emitter(obj) {
-  if (obj) return mixin(obj);
-};
-
-/**
- * Mixin the emitter properties.
- *
- * @param {Object} obj
  * @return {Object}
  * @api private
  */
 
-function mixin(obj) {
-  for (var key in Emitter.prototype) {
-    obj[key] = Emitter.prototype[key];
-  }
-  return obj;
+function scroll() {
+  var y = window.pageYOffset || document.documentElement.scrollTop;
+  var x = window.pageXOffset || document.documentElement.scrollLeft;
+  return { top: y, left: x };
 }
 
-/**
- * Listen on the given `event` with `fn`.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.on =
-Emitter.prototype.addEventListener = function(event, fn){
-  this._callbacks = this._callbacks || {};
-  (this._callbacks['$' + event] = this._callbacks['$' + event] || [])
-    .push(fn);
-  return this;
-};
-
-/**
- * Adds an `event` listener that will be invoked a single
- * time then automatically removed.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.once = function(event, fn){
-  function on() {
-    this.off(event, on);
-    fn.apply(this, arguments);
-  }
-
-  on.fn = fn;
-  this.on(event, on);
-  return this;
-};
-
-/**
- * Remove the given callback for `event` or all
- * registered callbacks.
- *
- * @param {String} event
- * @param {Function} fn
- * @return {Emitter}
- * @api public
- */
-
-Emitter.prototype.off =
-Emitter.prototype.removeListener =
-Emitter.prototype.removeAllListeners =
-Emitter.prototype.removeEventListener = function(event, fn){
-  this._callbacks = this._callbacks || {};
-
-  // all
-  if (0 == arguments.length) {
-    this._callbacks = {};
-    return this;
-  }
-
-  // specific event
-  var callbacks = this._callbacks['$' + event];
-  if (!callbacks) return this;
-
-  // remove all handlers
-  if (1 == arguments.length) {
-    delete this._callbacks['$' + event];
-    return this;
-  }
-
-  // remove specific handler
-  var cb;
-  for (var i = 0; i < callbacks.length; i++) {
-    cb = callbacks[i];
-    if (cb === fn || cb.fn === fn) {
-      callbacks.splice(i, 1);
-      break;
-    }
-  }
-  return this;
-};
-
-/**
- * Emit `event` with the given args.
- *
- * @param {String} event
- * @param {Mixed} ...
- * @return {Emitter}
- */
-
-Emitter.prototype.emit = function(event){
-  this._callbacks = this._callbacks || {};
-  var args = [].slice.call(arguments, 1)
-    , callbacks = this._callbacks['$' + event];
-
-  if (callbacks) {
-    callbacks = callbacks.slice(0);
-    for (var i = 0, len = callbacks.length; i < len; ++i) {
-      callbacks[i].apply(this, args);
-    }
-  }
-
-  return this;
-};
-
-/**
- * Return array of callbacks for `event`.
- *
- * @param {String} event
- * @return {Array}
- * @api public
- */
-
-Emitter.prototype.listeners = function(event){
-  this._callbacks = this._callbacks || {};
-  return this._callbacks['$' + event] || [];
-};
-
-/**
- * Check if this emitter has `event` handlers.
- *
- * @param {String} event
- * @return {Boolean}
- * @api public
- */
-
-Emitter.prototype.hasListeners = function(event){
-  return !! this.listeners(event).length;
-};
-
-},{}],"/Users/yw/src/yw/about/node_modules/component-raf/index.js":[function(require,module,exports){
+},{"raf":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-raf/index.js","tween":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/index.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-raf/index.js":[function(require,module,exports){
 /**
  * Expose `requestAnimationFrame()`.
  */
@@ -1367,7 +1241,7 @@ exports.cancel = function(id){
   cancel.call(window, id);
 };
 
-},{}],"/Users/yw/src/yw/about/node_modules/component-tween/index.js":[function(require,module,exports){
+},{}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/index.js":[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -1546,7 +1420,229 @@ Tween.prototype.update = function(fn){
   this._update = fn;
   return this;
 };
-},{"clone":"/Users/yw/src/yw/about/node_modules/component-clone/index.js","ease":"/Users/yw/src/yw/about/node_modules/ease-component/index.js","emitter":"/Users/yw/src/yw/about/node_modules/component-emitter/index.js","type":"/Users/yw/src/yw/about/node_modules/component-type/index.js"}],"/Users/yw/src/yw/about/node_modules/component-type/index.js":[function(require,module,exports){
+},{"clone":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-clone/index.js","ease":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/ease-component/index.js","emitter":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-emitter/index.js","type":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-clone/index.js":[function(require,module,exports){
+/**
+ * Module dependencies.
+ */
+
+var type;
+try {
+  type = require('component-type');
+} catch (_) {
+  type = require('type');
+}
+
+/**
+ * Module exports.
+ */
+
+module.exports = clone;
+
+/**
+ * Clones objects.
+ *
+ * @param {Mixed} any object
+ * @api public
+ */
+
+function clone(obj){
+  switch (type(obj)) {
+    case 'object':
+      var copy = {};
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          copy[key] = clone(obj[key]);
+        }
+      }
+      return copy;
+
+    case 'array':
+      var copy = new Array(obj.length);
+      for (var i = 0, l = obj.length; i < l; i++) {
+        copy[i] = clone(obj[i]);
+      }
+      return copy;
+
+    case 'regexp':
+      // from millermedeiros/amd-utils - MIT
+      var flags = '';
+      flags += obj.multiline ? 'm' : '';
+      flags += obj.global ? 'g' : '';
+      flags += obj.ignoreCase ? 'i' : '';
+      return new RegExp(obj.source, flags);
+
+    case 'date':
+      return new Date(obj.getTime());
+
+    default: // string, number, boolean, …
+      return obj;
+  }
+}
+
+},{"component-type":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js","type":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-emitter/index.js":[function(require,module,exports){
+
+/**
+ * Expose `Emitter`.
+ */
+
+module.exports = Emitter;
+
+/**
+ * Initialize a new `Emitter`.
+ *
+ * @api public
+ */
+
+function Emitter(obj) {
+  if (obj) return mixin(obj);
+};
+
+/**
+ * Mixin the emitter properties.
+ *
+ * @param {Object} obj
+ * @return {Object}
+ * @api private
+ */
+
+function mixin(obj) {
+  for (var key in Emitter.prototype) {
+    obj[key] = Emitter.prototype[key];
+  }
+  return obj;
+}
+
+/**
+ * Listen on the given `event` with `fn`.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.on =
+Emitter.prototype.addEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+  (this._callbacks['$' + event] = this._callbacks['$' + event] || [])
+    .push(fn);
+  return this;
+};
+
+/**
+ * Adds an `event` listener that will be invoked a single
+ * time then automatically removed.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.once = function(event, fn){
+  function on() {
+    this.off(event, on);
+    fn.apply(this, arguments);
+  }
+
+  on.fn = fn;
+  this.on(event, on);
+  return this;
+};
+
+/**
+ * Remove the given callback for `event` or all
+ * registered callbacks.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */
+
+Emitter.prototype.off =
+Emitter.prototype.removeListener =
+Emitter.prototype.removeAllListeners =
+Emitter.prototype.removeEventListener = function(event, fn){
+  this._callbacks = this._callbacks || {};
+
+  // all
+  if (0 == arguments.length) {
+    this._callbacks = {};
+    return this;
+  }
+
+  // specific event
+  var callbacks = this._callbacks['$' + event];
+  if (!callbacks) return this;
+
+  // remove all handlers
+  if (1 == arguments.length) {
+    delete this._callbacks['$' + event];
+    return this;
+  }
+
+  // remove specific handler
+  var cb;
+  for (var i = 0; i < callbacks.length; i++) {
+    cb = callbacks[i];
+    if (cb === fn || cb.fn === fn) {
+      callbacks.splice(i, 1);
+      break;
+    }
+  }
+  return this;
+};
+
+/**
+ * Emit `event` with the given args.
+ *
+ * @param {String} event
+ * @param {Mixed} ...
+ * @return {Emitter}
+ */
+
+Emitter.prototype.emit = function(event){
+  this._callbacks = this._callbacks || {};
+  var args = [].slice.call(arguments, 1)
+    , callbacks = this._callbacks['$' + event];
+
+  if (callbacks) {
+    callbacks = callbacks.slice(0);
+    for (var i = 0, len = callbacks.length; i < len; ++i) {
+      callbacks[i].apply(this, args);
+    }
+  }
+
+  return this;
+};
+
+/**
+ * Return array of callbacks for `event`.
+ *
+ * @param {String} event
+ * @return {Array}
+ * @api public
+ */
+
+Emitter.prototype.listeners = function(event){
+  this._callbacks = this._callbacks || {};
+  return this._callbacks['$' + event] || [];
+};
+
+/**
+ * Check if this emitter has `event` handlers.
+ *
+ * @param {String} event
+ * @return {Boolean}
+ * @api public
+ */
+
+Emitter.prototype.hasListeners = function(event){
+  return !! this.listeners(event).length;
+};
+
+},{}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js":[function(require,module,exports){
 /**
  * toString ref.
  */
@@ -1582,7 +1678,7 @@ module.exports = function(val){
   return typeof val;
 };
 
-},{}],"/Users/yw/src/yw/about/node_modules/ease-component/index.js":[function(require,module,exports){
+},{}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/ease-component/index.js":[function(require,module,exports){
 
 // easing functions from "Tween.js"
 
@@ -1754,103 +1850,7 @@ exports['in-bounce'] = exports.inBounce;
 exports['out-bounce'] = exports.outBounce;
 exports['in-out-bounce'] = exports.inOutBounce;
 
-},{}],"/Users/yw/src/yw/about/node_modules/get-anchor/index.js":[function(require,module,exports){
-const assert = require('assert')
-
-module.exports = getAnchor
-
-// find an anchor by href
-// and optional query
-// (str, str) -> DOMNode|Null
-function getAnchor (href, query) {
-  assert.ok(href)
-  href = href.replace(/^\//, '').replace(/^#/, '')
-
-  const selector = query
-    ? query + '[href="#' + href + '"]'
-    : '[href="#' + href + '"]'
-
-  return document.querySelector(selector)
-}
-
-},{"assert":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/assert/assert.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/index.js":[function(require,module,exports){
-var scroll = require('scroll-to');
-
-module.exports = function (elem, options) {
-  options = options || {};
-  if (typeof elem === 'string') elem = document.querySelector(elem);
-  if (elem) scroll(0, elem.offsetTop + (options.offset || 0), options);
-};
-
-},{"scroll-to":"/Users/yw/src/yw/about/node_modules/scroll-to/index.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to/index.js":[function(require,module,exports){
-/**
- * Module dependencies.
- */
-
-var Tween = require('tween');
-var raf = require('raf');
-
-/**
- * Expose `scrollTo`.
- */
-
-module.exports = scrollTo;
-
-/**
- * Scroll to `(x, y)`.
- *
- * @param {Number} x
- * @param {Number} y
- * @api public
- */
-
-function scrollTo(x, y, options) {
-  options = options || {};
-
-  // start position
-  var start = scroll();
-
-  // setup tween
-  var tween = Tween(start)
-    .ease(options.ease || 'out-circ')
-    .to({ top: y, left: x })
-    .duration(options.duration || 1000);
-
-  // scroll
-  tween.update(function(o){
-    window.scrollTo(o.left | 0, o.top | 0);
-  });
-
-  // handle end
-  tween.on('end', function(){
-    animate = function(){};
-  });
-
-  // animate
-  function animate() {
-    raf(animate);
-    tween.update();
-  }
-
-  animate();
-  
-  return tween;
-}
-
-/**
- * Return scroll position.
- *
- * @return {Object}
- * @api private
- */
-
-function scroll() {
-  var y = window.pageYOffset || document.documentElement.scrollTop;
-  var x = window.pageXOffset || document.documentElement.scrollLeft;
-  return { top: y, left: x };
-}
-
-},{"raf":"/Users/yw/src/yw/about/node_modules/component-raf/index.js","tween":"/Users/yw/src/yw/about/node_modules/component-tween/index.js"}],"/Users/yw/src/yw/about/node_modules/sliced/index.js":[function(require,module,exports){
+},{}],"/Users/yw/src/yw/about/node_modules/sliced/index.js":[function(require,module,exports){
 module.exports = exports = require('./lib/sliced');
 
 },{"./lib/sliced":"/Users/yw/src/yw/about/node_modules/sliced/lib/sliced.js"}],"/Users/yw/src/yw/about/node_modules/sliced/lib/sliced.js":[function(require,module,exports){
