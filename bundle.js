@@ -20,7 +20,7 @@ module.exports = register;
 // register click listeners
 // null -> null
 function register() {
-  var els = document.querySelectorAll('.footer-nav-inner a');
+  var els = document.querySelectorAll('.menu-nav-inner a');
   sliced(els).forEach(function (el) {
     el.addEventListener('click', clickHandler);
   });
