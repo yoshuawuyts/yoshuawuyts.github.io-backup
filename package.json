@@ -3,7 +3,7 @@
   "version": "1.0.11",
   "main": "index.js",
   "scripts": {
-    "build": "node ./bin/cli build",
+    "build": "node ./bin/cli build && cp CNAME ./dist/CNAME",
     "clean": "rm -rf dist",
     "dev": "linklocal link -r && linklocal list -r | bulk -c 'npm i --production'",
     "postversion": "npm run build && gh-pages -d ./dist && npm run clean && echo 'done'",
