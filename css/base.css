@@ -4,6 +4,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: var(--layout-body-height);
   border: var(--layout-body-border) var(--color-dark) solid;
   background-color: var(--color-main);
 }
@@ -12,8 +13,8 @@ body {
 
 .main {
   top: var(--layout-body-border);
-  min-height: var(--layout-body-height);
-  min-width: var(--layout-body-width);
+  height: var(--layout-body-height);
+  width: var(--layout-body-width);
 }
 
 .main-inner {

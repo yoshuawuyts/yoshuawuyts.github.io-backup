@@ -43,7 +43,7 @@ router.on('/index.html', function (cb) {
 
 // images
 router.on('/background.jpg', function (cb) {
-  const jpgloc = path.join(root, '2.jpg')
+  const jpgloc = path.join(root, 'img.jpg')
   const jpgstream = fs.createReadStream(jpgloc)
   cb(null, jpgstream)
 })

@@ -1,9 +1,9 @@
 /* view */
 
 .view-img {
-  height: calc(100vh - var(--layout-body-border) + var(--layout-img-gradient-height));
+  height: var(--layout-body-height);
   background-color: var(--color-main);
-  /* background-image: url("http://localhost:1337/background.jpg"); */
+  background-image: url("http://localhost:1337/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -43,8 +43,7 @@
   .view-img-tagline {
     position: initial;
     text-align: center;
-    bottom: calc(var(--layout-body-border) - var(--layout-img-gradient-height));
-    margin-bottom: var(--layout-img-gradient-height);
+    bottom: calc(var(--layout-body-border));
     width: 300px;
   }
 }
@@ -53,14 +52,4 @@
   .view-img-tagline {
     font-size: var(--font-size-title);
   }
-}
-
-/* gradient */
-
-.view-img-gradient {
-  position: absolute;
-  bottom: -var(--layout-img-gradient-height);
-  height: calc(25vh + var(--layout-img-gradient-height));
-  width: var(--layout-body-width);
-  background: linear-gradient(hsla(0, 0%, 0%, 0), honeydew);
 }

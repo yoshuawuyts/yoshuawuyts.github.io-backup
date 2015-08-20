@@ -7,14 +7,14 @@
   --font-body: 'museo-sans', sans-serif;
 
   --font-size-huge: 6rem;
-  --font-size-headline: 4rem;
-  --font-size-title: 3rem;
-  --font-size-subtitle: 3.5rem;
+  --font-size-headline: 3.5rem;
+  --font-size-title: 2.5rem;
+  --font-size-subtitle: 3rem;
   --font-size-body: 1.45rem;
 
   --z-index-top: 1;
 
-  --layout-body-padding: 3rem;
+  --layout-body-padding: 2rem;
   --layout-body-border: 1rem;
   --layout-body-height: calc(100vh - calc(2 * var(--layout-body-border)));
   --layout-body-width: calc(100vw - calc(2 * var(--layout-body-border)));
