@@ -93,7 +93,7 @@ body {
   height: calc(100vh - 2rem);
   border: 16px #000 solid;
   border: 1rem #000 solid;
-  background-color: honeydew;
+  background-color: #F0F0F2;
 }
 
 /* main */
@@ -291,7 +291,6 @@ html, body, a, p, span, tag {
 @media all and (max-width: 319px), (min-width: 320px) and (max-width: 799px) {
   .view-img {
     background-image: none;
-    background-color: honeydew;
   }
 }
 
