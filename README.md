@@ -1,4 +1,4 @@
-# about
+# yoshuawuyts.github.io
 [![build status][travis-image]][travis-url]
 [![js-standard-style][standard-image]][standard-url]
 
