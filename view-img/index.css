@@ -12,7 +12,6 @@
 @media all and (--wrist), (--palm) {
   .view-img {
     background-image: none;
-    background-color: var(--color-main);
   }
 }
 
