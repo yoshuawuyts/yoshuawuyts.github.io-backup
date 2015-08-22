@@ -334,12 +334,7 @@ html, body, a, p, span, tag {
     position: initial;
     text-align: center;
     bottom: 1rem;
-    width: 300px;
-  }
-}
-
-@media all and (max-width: 319px) {
-  .view-img-tagline {
+    max-width: 300px;
     font-size: 2.5rem;
   }
 }
