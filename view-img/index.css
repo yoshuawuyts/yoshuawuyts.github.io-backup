@@ -43,12 +43,7 @@
     position: initial;
     text-align: center;
     bottom: calc(var(--layout-body-border));
-    width: 300px;
-  }
-}
-
-@media all and (--wrist) {
-  .view-img-tagline {
+    max-width: calc(var(--layout-img-tagline-width) / 2);
     font-size: var(--font-size-title);
   }
 }
