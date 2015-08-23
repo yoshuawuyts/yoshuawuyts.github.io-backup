@@ -1,6 +1,6 @@
 {
   "name": "yoshuawuyts.github.io",
-  "version": "1.0.12",
+  "version": "1.1.0",
   "main": "index.js",
   "scripts": {
     "build": "node ./bin/cli build && cp CNAME ./dist/CNAME",
