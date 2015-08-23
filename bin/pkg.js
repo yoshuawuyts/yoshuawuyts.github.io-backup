@@ -42,6 +42,12 @@ router.on('/index.html', function (cb) {
 })
 
 // images
+router.on('/favicon.ico', function (cb) {
+  const icoloc = path.join(root, 'favicon/hex.ico')
+  const icostream = fs.createReadStream(icoloc)
+  cb(null, icostream)
+})
+
 router.on('/background.jpg', function (cb) {
   const jpgloc = path.join(root, 'view-img/img.jpg')
   const jpgstream = fs.createReadStream(jpgloc)
