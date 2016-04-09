@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/yw/src/yw/about/index.js":[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/Users/yw/src/yw/yoshuawuyts.github.io/index.js":[function(require,module,exports){
 'use strict';
 
 require('webcomponents.js');
@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
   createMenu();
 });
 
-},{"./menu":"/Users/yw/src/yw/about/menu/index.js","webcomponents.js":"/Users/yw/src/yw/about/node_modules/webcomponents.js/webcomponents.js"}],"/Users/yw/src/yw/about/menu/index.js":[function(require,module,exports){
+},{"./menu":"/Users/yw/src/yw/yoshuawuyts.github.io/menu/index.js","webcomponents.js":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/webcomponents.js/webcomponents.js"}],"/Users/yw/src/yw/yoshuawuyts.github.io/menu/index.js":[function(require,module,exports){
 'use strict';
 
 var scrollTo = require('scroll-to-element');
@@ -34,7 +34,7 @@ function clickHandler(e) {
   if (res) scrollTo(res, { offset: -50, duration: 700 });
 }
 
-},{"get-anchor":"/Users/yw/src/yw/about/node_modules/get-anchor/index.js","scroll-to-element":"/Users/yw/src/yw/about/node_modules/scroll-to-element/index.js","sliced":"/Users/yw/src/yw/about/node_modules/sliced/index.js"}],"/Users/yw/src/yw/about/node_modules/browserify/node_modules/assert/assert.js":[function(require,module,exports){
+},{"get-anchor":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/get-anchor/index.js","scroll-to-element":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/index.js","sliced":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/sliced/index.js"}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/browserify/node_modules/assert/assert.js":[function(require,module,exports){
 // http://wiki.commonjs.org/wiki/Unit_Testing/1.0
 //
 // THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
@@ -395,7 +395,7 @@ var objectKeys = Object.keys || function (obj) {
   return keys;
 };
 
-},{"util/":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/util/util.js"}],"/Users/yw/src/yw/about/node_modules/browserify/node_modules/inherits/inherits_browser.js":[function(require,module,exports){
+},{"util/":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/browserify/node_modules/util/util.js"}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/browserify/node_modules/inherits/inherits_browser.js":[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -420,7 +420,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],"/Users/yw/src/yw/about/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
+},{}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/browserify/node_modules/process/browser.js":[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -453,7 +453,9 @@ function drainQueue() {
         currentQueue = queue;
         queue = [];
         while (++queueIndex < len) {
-            currentQueue[queueIndex].run();
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
         }
         queueIndex = -1;
         len = queue.length;
@@ -505,21 +507,20 @@ process.binding = function (name) {
     throw new Error('process.binding is not supported');
 };
 
-// TODO(shtylman)
 process.cwd = function () { return '/' };
 process.chdir = function (dir) {
     throw new Error('process.chdir is not supported');
 };
 process.umask = function() { return 0; };
 
-},{}],"/Users/yw/src/yw/about/node_modules/browserify/node_modules/util/support/isBufferBrowser.js":[function(require,module,exports){
+},{}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/browserify/node_modules/util/support/isBufferBrowser.js":[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],"/Users/yw/src/yw/about/node_modules/browserify/node_modules/util/util.js":[function(require,module,exports){
+},{}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/browserify/node_modules/util/util.js":[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -1109,7 +1110,7 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/util/support/isBufferBrowser.js","_process":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/process/browser.js","inherits":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/inherits/inherits_browser.js"}],"/Users/yw/src/yw/about/node_modules/get-anchor/index.js":[function(require,module,exports){
+},{"./support/isBuffer":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/browserify/node_modules/util/support/isBufferBrowser.js","_process":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/browserify/node_modules/process/browser.js","inherits":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/browserify/node_modules/inherits/inherits_browser.js"}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/get-anchor/index.js":[function(require,module,exports){
 const assert = require('assert')
 
 module.exports = getAnchor
@@ -1128,7 +1129,7 @@ function getAnchor (href, query) {
   return document.querySelector(selector)
 }
 
-},{"assert":"/Users/yw/src/yw/about/node_modules/browserify/node_modules/assert/assert.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/index.js":[function(require,module,exports){
+},{"assert":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/browserify/node_modules/assert/assert.js"}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/index.js":[function(require,module,exports){
 var scroll = require('scroll-to');
 
 module.exports = function (elem, options) {
@@ -1137,7 +1138,7 @@ module.exports = function (elem, options) {
   if (elem) scroll(0, elem.offsetTop + (options.offset || 0), options);
 };
 
-},{"scroll-to":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/index.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/index.js":[function(require,module,exports){
+},{"scroll-to":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/index.js"}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/index.js":[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -1205,7 +1206,7 @@ function scroll() {
   return { top: y, left: x };
 }
 
-},{"raf":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-raf/index.js","tween":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/index.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-raf/index.js":[function(require,module,exports){
+},{"raf":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-raf/index.js","tween":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/index.js"}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-raf/index.js":[function(require,module,exports){
 /**
  * Expose `requestAnimationFrame()`.
  */
@@ -1241,7 +1242,7 @@ exports.cancel = function(id){
   cancel.call(window, id);
 };
 
-},{}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/index.js":[function(require,module,exports){
+},{}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/index.js":[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -1420,7 +1421,7 @@ Tween.prototype.update = function(fn){
   this._update = fn;
   return this;
 };
-},{"clone":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-clone/index.js","ease":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/ease-component/index.js","emitter":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-emitter/index.js","type":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-clone/index.js":[function(require,module,exports){
+},{"clone":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-clone/index.js","ease":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/ease-component/index.js","emitter":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-emitter/index.js","type":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js"}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-clone/index.js":[function(require,module,exports){
 /**
  * Module dependencies.
  */
@@ -1479,7 +1480,7 @@ function clone(obj){
   }
 }
 
-},{"component-type":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js","type":"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js"}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-emitter/index.js":[function(require,module,exports){
+},{"component-type":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js","type":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js"}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-emitter/index.js":[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -1642,7 +1643,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js":[function(require,module,exports){
+},{}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/component-type/index.js":[function(require,module,exports){
 /**
  * toString ref.
  */
@@ -1678,7 +1679,7 @@ module.exports = function(val){
   return typeof val;
 };
 
-},{}],"/Users/yw/src/yw/about/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/ease-component/index.js":[function(require,module,exports){
+},{}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/scroll-to-element/node_modules/scroll-to/node_modules/component-tween/node_modules/ease-component/index.js":[function(require,module,exports){
 
 // easing functions from "Tween.js"
 
@@ -1850,10 +1851,10 @@ exports['in-bounce'] = exports.inBounce;
 exports['out-bounce'] = exports.outBounce;
 exports['in-out-bounce'] = exports.inOutBounce;
 
-},{}],"/Users/yw/src/yw/about/node_modules/sliced/index.js":[function(require,module,exports){
+},{}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/sliced/index.js":[function(require,module,exports){
 module.exports = exports = require('./lib/sliced');
 
-},{"./lib/sliced":"/Users/yw/src/yw/about/node_modules/sliced/lib/sliced.js"}],"/Users/yw/src/yw/about/node_modules/sliced/lib/sliced.js":[function(require,module,exports){
+},{"./lib/sliced":"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/sliced/lib/sliced.js"}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/sliced/lib/sliced.js":[function(require,module,exports){
 
 /**
  * An Array.prototype.slice.call(arguments) alternative
@@ -1888,7 +1889,7 @@ module.exports = function (args, slice, sliceEnd) {
 }
 
 
-},{}],"/Users/yw/src/yw/about/node_modules/webcomponents.js/webcomponents.js":[function(require,module,exports){
+},{}],"/Users/yw/src/yw/yoshuawuyts.github.io/node_modules/webcomponents.js/webcomponents.js":[function(require,module,exports){
 /**
  * @license
  * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
@@ -1898,13 +1899,14 @@ module.exports = function (args, slice, sliceEnd) {
  * Code distributed by Google as part of the polymer project is also
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
-// @version 0.7.2
-window.WebComponents = window.WebComponents || {};
-
-(function(scope) {
-  var flags = scope.flags || {};
+// @version 0.7.21
+(function() {
+  window.WebComponents = window.WebComponents || {
+    flags: {}
+  };
   var file = "webcomponents.js";
   var script = document.querySelector('script[src*="' + file + '"]');
+  var flags = {};
   if (!flags.noOpts) {
     location.search.slice(1).split("&").forEach(function(option) {
       var parts = option.split("=");
@@ -1942,8 +1944,8 @@ window.WebComponents = window.WebComponents || {};
     };
     window.CustomElements.flags.register = flags.register;
   }
-  scope.flags = flags;
-})(WebComponents);
+  WebComponents.flags = flags;
+})();
 
 if (WebComponents.flags.shadow) {
   if (typeof WeakMap === "undefined") {
@@ -2049,7 +2051,7 @@ if (WebComponents.flags.shadow) {
       defineProperty(object, name, nonEnumerableDataDescriptor);
     }
     getOwnPropertyNames(window);
-    function getWrapperConstructor(node) {
+    function getWrapperConstructor(node, opt_instance) {
       var nativePrototype = node.__proto__ || Object.getPrototypeOf(node);
       if (isFirefox) {
         try {
@@ -2062,7 +2064,7 @@ if (WebComponents.flags.shadow) {
       if (wrapperConstructor) return wrapperConstructor;
       var parentWrapperConstructor = getWrapperConstructor(nativePrototype);
       var GeneratedWrapper = createWrapperConstructor(parentWrapperConstructor);
-      registerInternal(nativePrototype, GeneratedWrapper, node);
+      registerInternal(nativePrototype, GeneratedWrapper, opt_instance);
       return GeneratedWrapper;
     }
     function addForwardingProperties(nativePrototype, wrapperPrototype) {
@@ -2122,8 +2124,10 @@ if (WebComponents.flags.shadow) {
         }
         var descriptor = getDescriptor(source, name);
         var getter, setter;
-        if (allowMethod && typeof descriptor.value === "function") {
-          target[name] = getMethod(name);
+        if (typeof descriptor.value === "function") {
+          if (allowMethod) {
+            target[name] = getMethod(name);
+          }
           continue;
         }
         var isEvent = isEventHandlerName(name);
@@ -2186,7 +2190,11 @@ if (WebComponents.flags.shadow) {
     function wrap(impl) {
       if (impl === null) return null;
       assert(isNative(impl));
-      return impl.__wrapper8e3dd93a60__ || (impl.__wrapper8e3dd93a60__ = new (getWrapperConstructor(impl))(impl));
+      var wrapper = impl.__wrapper8e3dd93a60__;
+      if (wrapper != null) {
+        return wrapper;
+      }
+      return impl.__wrapper8e3dd93a60__ = new (getWrapperConstructor(impl, impl))(impl);
     }
     function unwrap(wrapper) {
       if (wrapper === null) return null;
@@ -2236,6 +2244,7 @@ if (WebComponents.flags.shadow) {
         });
       });
     }
+    scope.addForwardingProperties = addForwardingProperties;
     scope.assert = assert;
     scope.constructorTable = constructorTable;
     scope.defineGetter = defineGetter;
@@ -3043,6 +3052,24 @@ if (WebComponents.flags.shadow) {
         stopImmediatePropagationTable.set(this, true);
       }
     };
+    var supportsDefaultPrevented = function() {
+      var e = document.createEvent("Event");
+      e.initEvent("test", true, true);
+      e.preventDefault();
+      return e.defaultPrevented;
+    }();
+    if (!supportsDefaultPrevented) {
+      Event.prototype.preventDefault = function() {
+        if (!this.cancelable) return;
+        unsafeUnwrap(this).preventDefault();
+        Object.defineProperty(this, "defaultPrevented", {
+          get: function() {
+            return true;
+          },
+          configurable: true
+        });
+      };
+    }
     registerWrapper(OriginalEvent, Event, document.createEvent("Event"));
     function unwrapOptions(options) {
       if (!options || !options.relatedTarget) return options;
@@ -3666,8 +3693,8 @@ if (WebComponents.flags.shadow) {
     var originalInsertBefore = OriginalNode.prototype.insertBefore;
     var originalRemoveChild = OriginalNode.prototype.removeChild;
     var originalReplaceChild = OriginalNode.prototype.replaceChild;
-    var isIe = /Trident|Edge/.test(navigator.userAgent);
-    var removeChildOriginalHelper = isIe ? function(parent, child) {
+    var isIEOrEdge = /Trident|Edge/.test(navigator.userAgent);
+    var removeChildOriginalHelper = isIEOrEdge ? function(parent, child) {
       try {
         originalRemoveChild.call(parent, child);
       } catch (ex) {
@@ -4637,7 +4664,7 @@ if (WebComponents.flags.shadow) {
         enumerable: true
       });
     }
-    [ "getBoundingClientRect", "getClientRects", "scrollIntoView" ].forEach(methodRequiresRendering);
+    [ "focus", "getBoundingClientRect", "getClientRects", "scrollIntoView" ].forEach(methodRequiresRendering);
     registerWrapper(OriginalHTMLElement, HTMLElement, document.createElement("b"));
     scope.wrappers.HTMLElement = HTMLElement;
     scope.getInnerHTML = getInnerHTML;
@@ -5044,18 +5071,29 @@ if (WebComponents.flags.shadow) {
     "use strict";
     var Element = scope.wrappers.Element;
     var HTMLElement = scope.wrappers.HTMLElement;
-    var registerObject = scope.registerObject;
+    var registerWrapper = scope.registerWrapper;
     var defineWrapGetter = scope.defineWrapGetter;
+    var unsafeUnwrap = scope.unsafeUnwrap;
+    var wrap = scope.wrap;
+    var mixin = scope.mixin;
     var SVG_NS = "http://www.w3.org/2000/svg";
+    var OriginalSVGElement = window.SVGElement;
     var svgTitleElement = document.createElementNS(SVG_NS, "title");
-    var SVGTitleElement = registerObject(svgTitleElement);
-    var SVGElement = Object.getPrototypeOf(SVGTitleElement.prototype).constructor;
     if (!("classList" in svgTitleElement)) {
       var descr = Object.getOwnPropertyDescriptor(Element.prototype, "classList");
       Object.defineProperty(HTMLElement.prototype, "classList", descr);
       delete Element.prototype.classList;
     }
-    defineWrapGetter(SVGElement, "ownerSVGElement");
+    function SVGElement(node) {
+      Element.call(this, node);
+    }
+    SVGElement.prototype = Object.create(Element.prototype);
+    mixin(SVGElement.prototype, {
+      get ownerSVGElement() {
+        return wrap(unsafeUnwrap(this).ownerSVGElement);
+      }
+    });
+    registerWrapper(OriginalSVGElement, SVGElement, document.createElementNS(SVG_NS, "title"));
     scope.wrappers.SVGElement = SVGElement;
   })(window.ShadowDOMPolyfill);
   (function(scope) {
@@ -5161,6 +5199,7 @@ if (WebComponents.flags.shadow) {
   })(window.ShadowDOMPolyfill);
   (function(scope) {
     "use strict";
+    var addForwardingProperties = scope.addForwardingProperties;
     var mixin = scope.mixin;
     var registerWrapper = scope.registerWrapper;
     var setWrapper = scope.setWrapper;
@@ -5185,6 +5224,10 @@ if (WebComponents.flags.shadow) {
         unsafeUnwrap(this).texSubImage2D.apply(unsafeUnwrap(this), arguments);
       }
     });
+    var OriginalWebGLRenderingContextBase = Object.getPrototypeOf(OriginalWebGLRenderingContext.prototype);
+    if (OriginalWebGLRenderingContextBase !== Object.prototype) {
+      addForwardingProperties(OriginalWebGLRenderingContextBase, WebGLRenderingContext.prototype);
+    }
     var instanceProperties = /WebKit/.test(navigator.userAgent) ? {
       drawingBufferHeight: null,
       drawingBufferWidth: null
@@ -5194,20 +5237,27 @@ if (WebComponents.flags.shadow) {
   })(window.ShadowDOMPolyfill);
   (function(scope) {
     "use strict";
+    var Node = scope.wrappers.Node;
     var GetElementsByInterface = scope.GetElementsByInterface;
     var NonElementParentNodeInterface = scope.NonElementParentNodeInterface;
     var ParentNodeInterface = scope.ParentNodeInterface;
     var SelectorsInterface = scope.SelectorsInterface;
     var mixin = scope.mixin;
     var registerObject = scope.registerObject;
-    var DocumentFragment = registerObject(document.createDocumentFragment());
+    var registerWrapper = scope.registerWrapper;
+    var OriginalDocumentFragment = window.DocumentFragment;
+    function DocumentFragment(node) {
+      Node.call(this, node);
+    }
+    DocumentFragment.prototype = Object.create(Node.prototype);
     mixin(DocumentFragment.prototype, ParentNodeInterface);
     mixin(DocumentFragment.prototype, SelectorsInterface);
     mixin(DocumentFragment.prototype, GetElementsByInterface);
     mixin(DocumentFragment.prototype, NonElementParentNodeInterface);
+    registerWrapper(OriginalDocumentFragment, DocumentFragment, document.createDocumentFragment());
+    scope.wrappers.DocumentFragment = DocumentFragment;
     var Comment = registerObject(document.createComment(""));
     scope.wrappers.Comment = Comment;
-    scope.wrappers.DocumentFragment = DocumentFragment;
   })(window.ShadowDOMPolyfill);
   (function(scope) {
     "use strict";
@@ -5221,6 +5271,7 @@ if (WebComponents.flags.shadow) {
     var setInnerHTML = scope.setInnerHTML;
     var unsafeUnwrap = scope.unsafeUnwrap;
     var unwrap = scope.unwrap;
+    var wrap = scope.wrap;
     var shadowHostTable = new WeakMap();
     var nextOlderShadowTreeTable = new WeakMap();
     function ShadowRoot(hostWrapper) {
@@ -5253,6 +5304,25 @@ if (WebComponents.flags.shadow) {
       },
       elementFromPoint: function(x, y) {
         return elementFromPoint(this, this.ownerDocument, x, y);
+      },
+      getSelection: function() {
+        return document.getSelection();
+      },
+      get activeElement() {
+        var unwrappedActiveElement = unwrap(this).ownerDocument.activeElement;
+        if (!unwrappedActiveElement || !unwrappedActiveElement.nodeType) return null;
+        var activeElement = wrap(unwrappedActiveElement);
+        while (!this.contains(activeElement)) {
+          while (activeElement.parentNode) {
+            activeElement = activeElement.parentNode;
+          }
+          if (activeElement.host) {
+            activeElement = activeElement.host;
+          } else {
+            return null;
+          }
+        }
+        return activeElement;
       }
     });
     scope.wrappers.ShadowRoot = ShadowRoot;
@@ -5840,7 +5910,7 @@ if (WebComponents.flags.shadow) {
         unsafeUnwrap(this).removeRange(unwrap(range));
       },
       selectAllChildren: function(node) {
-        unsafeUnwrap(this).selectAllChildren(unwrapIfNeeded(node));
+        unsafeUnwrap(this).selectAllChildren(node instanceof ShadowRoot ? unsafeUnwrap(node.host) : unwrapIfNeeded(node));
       },
       toString: function() {
         return unsafeUnwrap(this).toString();
@@ -5911,6 +5981,7 @@ if (WebComponents.flags.shadow) {
     var ShadowRoot = scope.wrappers.ShadowRoot;
     var TreeScope = scope.TreeScope;
     var cloneNode = scope.cloneNode;
+    var defineGetter = scope.defineGetter;
     var defineWrapGetter = scope.defineWrapGetter;
     var elementFromPoint = scope.elementFromPoint;
     var forwardMethodsToWrapper = scope.forwardMethodsToWrapper;
@@ -5934,6 +6005,22 @@ if (WebComponents.flags.shadow) {
     defineWrapGetter(Document, "documentElement");
     defineWrapGetter(Document, "body");
     defineWrapGetter(Document, "head");
+    defineGetter(Document, "activeElement", function() {
+      var unwrappedActiveElement = unwrap(this).activeElement;
+      if (!unwrappedActiveElement || !unwrappedActiveElement.nodeType) return null;
+      var activeElement = wrap(unwrappedActiveElement);
+      while (!this.contains(activeElement)) {
+        while (activeElement.parentNode) {
+          activeElement = activeElement.parentNode;
+        }
+        if (activeElement.host) {
+          activeElement = activeElement.host;
+        } else {
+          return null;
+        }
+      }
+      return activeElement;
+    });
     function wrapMethod(name) {
       var original = document[name];
       Document.prototype[name] = function() {
@@ -6854,7 +6941,7 @@ if (WebComponents.flags.shadow) {
 
        case "scheme data":
         if ("?" == c) {
-          query = "?";
+          this._query = "?";
           state = "query";
         } else if ("#" == c) {
           this._fragment = "#";
@@ -7264,9 +7351,12 @@ if (WebComponents.flags.shadow) {
     };
   }
   scope.URL = jURL;
-})(this);
+})(self);
 
 (function(global) {
+  if (global.JsMutationObserver) {
+    return;
+  }
   var registrationsTable = new WeakMap();
   var setImmediate;
   if (/Trident|Edge/.test(navigator.userAgent)) {
@@ -7562,8 +7652,83 @@ if (WebComponents.flags.shadow) {
     }
   };
   global.JsMutationObserver = JsMutationObserver;
-  if (!global.MutationObserver) global.MutationObserver = JsMutationObserver;
-})(this);
+  if (!global.MutationObserver) {
+    global.MutationObserver = JsMutationObserver;
+    JsMutationObserver._isPolyfilled = true;
+  }
+})(self);
+
+(function(scope) {
+  "use strict";
+  if (!window.performance) {
+    var start = Date.now();
+    window.performance = {
+      now: function() {
+        return Date.now() - start;
+      }
+    };
+  }
+  if (!window.requestAnimationFrame) {
+    window.requestAnimationFrame = function() {
+      var nativeRaf = window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+      return nativeRaf ? function(callback) {
+        return nativeRaf(function() {
+          callback(performance.now());
+        });
+      } : function(callback) {
+        return window.setTimeout(callback, 1e3 / 60);
+      };
+    }();
+  }
+  if (!window.cancelAnimationFrame) {
+    window.cancelAnimationFrame = function() {
+      return window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || function(id) {
+        clearTimeout(id);
+      };
+    }();
+  }
+  var workingDefaultPrevented = function() {
+    var e = document.createEvent("Event");
+    e.initEvent("foo", true, true);
+    e.preventDefault();
+    return e.defaultPrevented;
+  }();
+  if (!workingDefaultPrevented) {
+    var origPreventDefault = Event.prototype.preventDefault;
+    Event.prototype.preventDefault = function() {
+      if (!this.cancelable) {
+        return;
+      }
+      origPreventDefault.call(this);
+      Object.defineProperty(this, "defaultPrevented", {
+        get: function() {
+          return true;
+        },
+        configurable: true
+      });
+    };
+  }
+  var isIE = /Trident/.test(navigator.userAgent);
+  if (!window.CustomEvent || isIE && typeof window.CustomEvent !== "function") {
+    window.CustomEvent = function(inType, params) {
+      params = params || {};
+      var e = document.createEvent("CustomEvent");
+      e.initCustomEvent(inType, Boolean(params.bubbles), Boolean(params.cancelable), params.detail);
+      return e;
+    };
+    window.CustomEvent.prototype = window.Event.prototype;
+  }
+  if (!window.Event || isIE && typeof window.Event !== "function") {
+    var origEvent = window.Event;
+    window.Event = function(inType, params) {
+      params = params || {};
+      var e = document.createEvent("Event");
+      e.initEvent(inType, Boolean(params.bubbles), Boolean(params.cancelable));
+      return e;
+    };
+    window.Event.prototype = origEvent.prototype;
+  }
+})(window.WebComponents);
 
 window.HTMLImports = window.HTMLImports || {
   flags: {}
@@ -7574,19 +7739,19 @@ window.HTMLImports = window.HTMLImports || {
   var useNative = Boolean(IMPORT_LINK_TYPE in document.createElement("link"));
   var hasShadowDOMPolyfill = Boolean(window.ShadowDOMPolyfill);
   var wrap = function(node) {
-    return hasShadowDOMPolyfill ? ShadowDOMPolyfill.wrapIfNeeded(node) : node;
+    return hasShadowDOMPolyfill ? window.ShadowDOMPolyfill.wrapIfNeeded(node) : node;
   };
   var rootDocument = wrap(document);
   var currentScriptDescriptor = {
     get: function() {
-      var script = HTMLImports.currentScript || document.currentScript || (document.readyState !== "complete" ? document.scripts[document.scripts.length - 1] : null);
+      var script = window.HTMLImports.currentScript || document.currentScript || (document.readyState !== "complete" ? document.scripts[document.scripts.length - 1] : null);
       return wrap(script);
     },
     configurable: true
   };
   Object.defineProperty(document, "_currentScript", currentScriptDescriptor);
   Object.defineProperty(rootDocument, "_currentScript", currentScriptDescriptor);
-  var isIE = /Trident|Edge/.test(navigator.userAgent);
+  var isIE = /Trident/.test(navigator.userAgent);
   function whenReady(callback, doc) {
     doc = doc || rootDocument;
     whenDocumentReady(function() {
@@ -7640,6 +7805,7 @@ window.HTMLImports = window.HTMLImports || {
     if (importCount) {
       for (var i = 0, imp; i < importCount && (imp = imports[i]); i++) {
         if (isImportLoaded(imp)) {
+          newImports.push(this);
           parsedCount++;
           checkDone();
         } else {
@@ -7695,8 +7861,8 @@ window.HTMLImports = window.HTMLImports || {
     })();
   }
   whenReady(function(detail) {
-    HTMLImports.ready = true;
-    HTMLImports.readyTime = new Date().getTime();
+    window.HTMLImports.ready = true;
+    window.HTMLImports.readyTime = new Date().getTime();
     var evt = rootDocument.createEvent("CustomEvent");
     evt.initCustomEvent("HTMLImportsLoaded", true, true, detail);
     rootDocument.dispatchEvent(evt);
@@ -7706,7 +7872,7 @@ window.HTMLImports = window.HTMLImports || {
   scope.rootDocument = rootDocument;
   scope.whenReady = whenReady;
   scope.isIE = isIE;
-})(HTMLImports);
+})(window.HTMLImports);
 
 (function(scope) {
   var modules = [];
@@ -7720,9 +7886,9 @@ window.HTMLImports = window.HTMLImports || {
   };
   scope.addModule = addModule;
   scope.initializeModules = initializeModules;
-})(HTMLImports);
+})(window.HTMLImports);
 
-HTMLImports.addModule(function(scope) {
+window.HTMLImports.addModule(function(scope) {
   var CSS_URL_REGEXP = /(url\()([^)]*)(\))/g;
   var CSS_IMPORT_REGEXP = /(@import[\s]+(?!url\())([^;]*)(;)/g;
   var path = {
@@ -7752,7 +7918,7 @@ HTMLImports.addModule(function(scope) {
   scope.path = path;
 });
 
-HTMLImports.addModule(function(scope) {
+window.HTMLImports.addModule(function(scope) {
   var xhr = {
     async: true,
     ok: function(request) {
@@ -7766,10 +7932,14 @@ HTMLImports.addModule(function(scope) {
       request.open("GET", url, xhr.async);
       request.addEventListener("readystatechange", function(e) {
         if (request.readyState === 4) {
-          var locationHeader = request.getResponseHeader("Location");
           var redirectedUrl = null;
-          if (locationHeader) {
-            var redirectedUrl = locationHeader.substr(0, 1) === "/" ? location.origin + locationHeader : locationHeader;
+          try {
+            var locationHeader = request.getResponseHeader("Location");
+            if (locationHeader) {
+              redirectedUrl = locationHeader.substr(0, 1) === "/" ? location.origin + locationHeader : locationHeader;
+            }
+          } catch (e) {
+            console.error(e.message);
           }
           next.call(nextContext, !xhr.ok(request) && request, request.response || request.responseText, redirectedUrl);
         }
@@ -7784,7 +7954,7 @@ HTMLImports.addModule(function(scope) {
   scope.xhr = xhr;
 });
 
-HTMLImports.addModule(function(scope) {
+window.HTMLImports.addModule(function(scope) {
   var xhr = scope.xhr;
   var flags = scope.flags;
   var Loader = function(onLoad, onComplete) {
@@ -7877,7 +8047,7 @@ HTMLImports.addModule(function(scope) {
   scope.Loader = Loader;
 });
 
-HTMLImports.addModule(function(scope) {
+window.HTMLImports.addModule(function(scope) {
   var Observer = function(addCallback) {
     this.addCallback = addCallback;
     this.mo = new MutationObserver(this.handler.bind(this));
@@ -7910,7 +8080,7 @@ HTMLImports.addModule(function(scope) {
   scope.Observer = Observer;
 });
 
-HTMLImports.addModule(function(scope) {
+window.HTMLImports.addModule(function(scope) {
   var path = scope.path;
   var rootDocument = scope.rootDocument;
   var flags = scope.flags;
@@ -7919,7 +8089,7 @@ HTMLImports.addModule(function(scope) {
   var IMPORT_SELECTOR = "link[rel=" + IMPORT_LINK_TYPE + "]";
   var importParser = {
     documentSelectors: IMPORT_SELECTOR,
-    importsSelectors: [ IMPORT_SELECTOR, "link[rel=stylesheet]", "style", "script:not([type])", 'script[type="application/javascript"]', 'script[type="text/javascript"]' ].join(","),
+    importsSelectors: [ IMPORT_SELECTOR, "link[rel=stylesheet]:not([type])", "style:not([type])", "script:not([type])", 'script[type="application/javascript"]', 'script[type="text/javascript"]' ].join(","),
     map: {
       link: "parseLink",
       script: "parseScript",
@@ -7970,8 +8140,9 @@ HTMLImports.addModule(function(scope) {
       }
     },
     parseImport: function(elt) {
-      if (HTMLImports.__importsParsingHook) {
-        HTMLImports.__importsParsingHook(elt);
+      elt.import = elt.__doc;
+      if (window.HTMLImports.__importsParsingHook) {
+        window.HTMLImports.__importsParsingHook(elt);
       }
       if (elt.import) {
         elt.import.__importParsed = true;
@@ -8032,6 +8203,8 @@ HTMLImports.addModule(function(scope) {
     trackElement: function(elt, callback) {
       var self = this;
       var done = function(e) {
+        elt.removeEventListener("load", done);
+        elt.removeEventListener("error", done);
         if (callback) {
           callback(e);
         }
@@ -8069,7 +8242,9 @@ HTMLImports.addModule(function(scope) {
       script.src = scriptElt.src ? scriptElt.src : generateScriptDataUrl(scriptElt);
       scope.currentScript = scriptElt;
       this.trackElement(script, function(e) {
-        script.parentNode.removeChild(script);
+        if (script.parentNode) {
+          script.parentNode.removeChild(script);
+        }
         scope.currentScript = null;
       });
       this.addElementToDocument(script);
@@ -8082,10 +8257,10 @@ HTMLImports.addModule(function(scope) {
       if (doc && this._mayParse.indexOf(doc) < 0) {
         this._mayParse.push(doc);
         var nodes = doc.querySelectorAll(this.parseSelectorsForNode(doc));
-        for (var i = 0, l = nodes.length, p = 0, n; i < l && (n = nodes[i]); i++) {
+        for (var i = 0, l = nodes.length, n; i < l && (n = nodes[i]); i++) {
           if (!this.isParsed(n)) {
             if (this.hasResource(n)) {
-              return nodeIsImport(n) ? this.nextToParseInDoc(n.import, n) : n;
+              return nodeIsImport(n) ? this.nextToParseInDoc(n.__doc, n) : n;
             } else {
               return;
             }
@@ -8108,7 +8283,7 @@ HTMLImports.addModule(function(scope) {
       return this.dynamicElements.indexOf(elt) >= 0;
     },
     hasResource: function(node) {
-      if (nodeIsImport(node) && node.import === undefined) {
+      if (nodeIsImport(node) && node.__doc === undefined) {
         return false;
       }
       return true;
@@ -8142,7 +8317,7 @@ HTMLImports.addModule(function(scope) {
   scope.IMPORT_SELECTOR = IMPORT_SELECTOR;
 });
 
-HTMLImports.addModule(function(scope) {
+window.HTMLImports.addModule(function(scope) {
   var flags = scope.flags;
   var IMPORT_LINK_TYPE = scope.IMPORT_LINK_TYPE;
   var IMPORT_SELECTOR = scope.IMPORT_SELECTOR;
@@ -8182,7 +8357,7 @@ HTMLImports.addModule(function(scope) {
           }
           this.documents[url] = doc;
         }
-        elt.import = doc;
+        elt.__doc = doc;
       }
       parser.parseNext();
     },
@@ -8241,7 +8416,7 @@ HTMLImports.addModule(function(scope) {
   scope.importLoader = importLoader;
 });
 
-HTMLImports.addModule(function(scope) {
+window.HTMLImports.addModule(function(scope) {
   var parser = scope.parser;
   var importer = scope.importer;
   var dynamic = {
@@ -8278,26 +8453,17 @@ HTMLImports.addModule(function(scope) {
   if (scope.useNative) {
     return;
   }
-  if (isIE && typeof window.CustomEvent !== "function") {
-    window.CustomEvent = function(inType, params) {
-      params = params || {};
-      var e = document.createEvent("CustomEvent");
-      e.initCustomEvent(inType, Boolean(params.bubbles), Boolean(params.cancelable), params.detail);
-      return e;
-    };
-    window.CustomEvent.prototype = window.Event.prototype;
-  }
   initializeModules();
   var rootDocument = scope.rootDocument;
   function bootstrap() {
-    HTMLImports.importer.bootDocument(rootDocument);
+    window.HTMLImports.importer.bootDocument(rootDocument);
   }
   if (document.readyState === "complete" || document.readyState === "interactive" && !window.attachEvent) {
     bootstrap();
   } else {
     document.addEventListener("DOMContentLoaded", bootstrap);
   }
-})(HTMLImports);
+})(window.HTMLImports);
 
 window.CustomElements = window.CustomElements || {
   flags: {}
@@ -8317,11 +8483,12 @@ window.CustomElements = window.CustomElements || {
   scope.addModule = addModule;
   scope.initializeModules = initializeModules;
   scope.hasNative = Boolean(document.registerElement);
-  scope.useNative = !flags.register && scope.hasNative && !window.ShadowDOMPolyfill && (!window.HTMLImports || HTMLImports.useNative);
-})(CustomElements);
+  scope.isIE = /Trident/.test(navigator.userAgent);
+  scope.useNative = !flags.register && scope.hasNative && !window.ShadowDOMPolyfill && (!window.HTMLImports || window.HTMLImports.useNative);
+})(window.CustomElements);
 
-CustomElements.addModule(function(scope) {
-  var IMPORT_LINK_TYPE = window.HTMLImports ? HTMLImports.IMPORT_LINK_TYPE : "none";
+window.CustomElements.addModule(function(scope) {
+  var IMPORT_LINK_TYPE = window.HTMLImports ? window.HTMLImports.IMPORT_LINK_TYPE : "none";
   function forSubtree(node, cb) {
     findAllElements(node, function(e) {
       if (cb(e)) {
@@ -8358,7 +8525,7 @@ CustomElements.addModule(function(scope) {
     _forDocumentTree(doc, cb, []);
   }
   function _forDocumentTree(doc, cb, processingDocuments) {
-    doc = wrap(doc);
+    doc = window.wrap(doc);
     if (processingDocuments.indexOf(doc) >= 0) {
       return;
     }
@@ -8375,36 +8542,31 @@ CustomElements.addModule(function(scope) {
   scope.forSubtree = forSubtree;
 });
 
-CustomElements.addModule(function(scope) {
+window.CustomElements.addModule(function(scope) {
   var flags = scope.flags;
   var forSubtree = scope.forSubtree;
   var forDocumentTree = scope.forDocumentTree;
-  function addedNode(node) {
-    return added(node) || addedSubtree(node);
+  function addedNode(node, isAttached) {
+    return added(node, isAttached) || addedSubtree(node, isAttached);
   }
-  function added(node) {
-    if (scope.upgrade(node)) {
+  function added(node, isAttached) {
+    if (scope.upgrade(node, isAttached)) {
       return true;
     }
-    attached(node);
+    if (isAttached) {
+      attached(node);
+    }
   }
-  function addedSubtree(node) {
+  function addedSubtree(node, isAttached) {
     forSubtree(node, function(e) {
-      if (added(e)) {
+      if (added(e, isAttached)) {
         return true;
       }
     });
   }
-  function attachedNode(node) {
-    attached(node);
-    if (inDocument(node)) {
-      forSubtree(node, function(e) {
-        attached(e);
-      });
-    }
-  }
-  var hasPolyfillMutations = !window.MutationObserver || window.MutationObserver === window.JsMutationObserver;
-  scope.hasPolyfillMutations = hasPolyfillMutations;
+  var hasThrottledAttached = window.MutationObserver._isPolyfilled && flags["throttle-attached"];
+  scope.hasPolyfillMutations = hasThrottledAttached;
+  scope.hasThrottledAttached = hasThrottledAttached;
   var isPendingMutations = false;
   var pendingMutations = [];
   function deferMutation(fn) {
@@ -8423,7 +8585,7 @@ CustomElements.addModule(function(scope) {
     pendingMutations = [];
   }
   function attached(element) {
-    if (hasPolyfillMutations) {
+    if (hasThrottledAttached) {
       deferMutation(function() {
         _attached(element);
       });
@@ -8432,12 +8594,10 @@ CustomElements.addModule(function(scope) {
     }
   }
   function _attached(element) {
-    if (element.__upgraded__ && (element.attachedCallback || element.detachedCallback)) {
-      if (!element.__attached && inDocument(element)) {
-        element.__attached = true;
-        if (element.attachedCallback) {
-          element.attachedCallback();
-        }
+    if (element.__upgraded__ && !element.__attached) {
+      element.__attached = true;
+      if (element.attachedCallback) {
+        element.attachedCallback();
       }
     }
   }
@@ -8448,7 +8608,7 @@ CustomElements.addModule(function(scope) {
     });
   }
   function detached(element) {
-    if (hasPolyfillMutations) {
+    if (hasThrottledAttached) {
       deferMutation(function() {
         _detached(element);
       });
@@ -8457,18 +8617,16 @@ CustomElements.addModule(function(scope) {
     }
   }
   function _detached(element) {
-    if (element.__upgraded__ && (element.attachedCallback || element.detachedCallback)) {
-      if (element.__attached && !inDocument(element)) {
-        element.__attached = false;
-        if (element.detachedCallback) {
-          element.detachedCallback();
-        }
+    if (element.__upgraded__ && element.__attached) {
+      element.__attached = false;
+      if (element.detachedCallback) {
+        element.detachedCallback();
       }
     }
   }
   function inDocument(element) {
     var p = element;
-    var doc = wrap(document);
+    var doc = window.wrap(document);
     while (p) {
       if (p == doc) {
         return true;
@@ -8486,7 +8644,7 @@ CustomElements.addModule(function(scope) {
       }
     }
   }
-  function handler(mutations) {
+  function handler(root, mutations) {
     if (flags.dom) {
       var mx = mutations[0];
       if (mx && mx.type === "childList" && mx.addedNodes) {
@@ -8501,13 +8659,14 @@ CustomElements.addModule(function(scope) {
       }
       console.group("mutations (%d) [%s]", mutations.length, u || "");
     }
+    var isAttached = inDocument(root);
     mutations.forEach(function(mx) {
       if (mx.type === "childList") {
         forEach(mx.addedNodes, function(n) {
           if (!n.localName) {
             return;
           }
-          addedNode(n);
+          addedNode(n, isAttached);
         });
         forEach(mx.removedNodes, function(n) {
           if (!n.localName) {
@@ -8520,16 +8679,16 @@ CustomElements.addModule(function(scope) {
     flags.dom && console.groupEnd();
   }
   function takeRecords(node) {
-    node = wrap(node);
+    node = window.wrap(node);
     if (!node) {
-      node = wrap(document);
+      node = window.wrap(document);
     }
     while (node.parentNode) {
       node = node.parentNode;
     }
     var observer = node.__observer;
     if (observer) {
-      handler(observer.takeRecords());
+      handler(node, observer.takeRecords());
       takeMutations();
     }
   }
@@ -8538,7 +8697,7 @@ CustomElements.addModule(function(scope) {
     if (inRoot.__observer) {
       return;
     }
-    var observer = new MutationObserver(handler);
+    var observer = new MutationObserver(handler.bind(this, inRoot));
     observer.observe(inRoot, {
       childList: true,
       subtree: true
@@ -8546,9 +8705,10 @@ CustomElements.addModule(function(scope) {
     inRoot.__observer = observer;
   }
   function upgradeDocument(doc) {
-    doc = wrap(doc);
+    doc = window.wrap(doc);
     flags.dom && console.group("upgradeDocument: ", doc.baseURI.split("/").pop());
-    addedNode(doc);
+    var isMainDocument = doc === window.wrap(document);
+    addedNode(doc, isMainDocument);
     observe(doc);
     flags.dom && console.groupEnd();
   }
@@ -8559,34 +8719,38 @@ CustomElements.addModule(function(scope) {
   if (originalCreateShadowRoot) {
     Element.prototype.createShadowRoot = function() {
       var root = originalCreateShadowRoot.call(this);
-      CustomElements.watchShadow(this);
+      window.CustomElements.watchShadow(this);
       return root;
     };
   }
   scope.watchShadow = watchShadow;
   scope.upgradeDocumentTree = upgradeDocumentTree;
+  scope.upgradeDocument = upgradeDocument;
   scope.upgradeSubtree = addedSubtree;
   scope.upgradeAll = addedNode;
-  scope.attachedNode = attachedNode;
+  scope.attached = attached;
   scope.takeRecords = takeRecords;
 });
 
-CustomElements.addModule(function(scope) {
+window.CustomElements.addModule(function(scope) {
   var flags = scope.flags;
-  function upgrade(node) {
+  function upgrade(node, isAttached) {
+    if (node.localName === "template") {
+      if (window.HTMLTemplateElement && HTMLTemplateElement.decorate) {
+        HTMLTemplateElement.decorate(node);
+      }
+    }
     if (!node.__upgraded__ && node.nodeType === Node.ELEMENT_NODE) {
       var is = node.getAttribute("is");
-      var definition = scope.getRegisteredDefinition(is || node.localName);
+      var definition = scope.getRegisteredDefinition(node.localName) || scope.getRegisteredDefinition(is);
       if (definition) {
-        if (is && definition.tag == node.localName) {
-          return upgradeWithDefinition(node, definition);
-        } else if (!is && !definition.extends) {
-          return upgradeWithDefinition(node, definition);
+        if (is && definition.tag == node.localName || !is && !definition.extends) {
+          return upgradeWithDefinition(node, definition, isAttached);
         }
       }
     }
   }
-  function upgradeWithDefinition(element, definition) {
+  function upgradeWithDefinition(element, definition, isAttached) {
     flags.upgrade && console.group("upgrade:", element.localName);
     if (definition.is) {
       element.setAttribute("is", definition.is);
@@ -8594,8 +8758,10 @@ CustomElements.addModule(function(scope) {
     implementPrototype(element, definition);
     element.__upgraded__ = true;
     created(element);
-    scope.attachedNode(element);
-    scope.upgradeSubtree(element);
+    if (isAttached) {
+      scope.attached(element);
+    }
+    scope.upgradeSubtree(element, isAttached);
     flags.upgrade && console.groupEnd();
     return element;
   }
@@ -8631,8 +8797,8 @@ CustomElements.addModule(function(scope) {
   scope.implementPrototype = implementPrototype;
 });
 
-CustomElements.addModule(function(scope) {
-  var isIE11OrOlder = scope.isIE11OrOlder;
+window.CustomElements.addModule(function(scope) {
+  var isIE = scope.isIE;
   var upgradeDocumentTree = scope.upgradeDocumentTree;
   var upgradeAll = scope.upgradeAll;
   var upgradeWithDefinition = scope.upgradeWithDefinition;
@@ -8723,16 +8889,22 @@ CustomElements.addModule(function(scope) {
       var nativePrototype = HTMLElement.prototype;
       if (definition.is) {
         var inst = document.createElement(definition.tag);
-        var expectedPrototype = Object.getPrototypeOf(inst);
-        if (expectedPrototype === definition.prototype) {
-          nativePrototype = expectedPrototype;
-        }
+        nativePrototype = Object.getPrototypeOf(inst);
       }
       var proto = definition.prototype, ancestor;
-      while (proto && proto !== nativePrototype) {
+      var foundPrototype = false;
+      while (proto) {
+        if (proto == nativePrototype) {
+          foundPrototype = true;
+        }
         ancestor = Object.getPrototypeOf(proto);
-        proto.__proto__ = ancestor;
+        if (ancestor) {
+          proto.__proto__ = ancestor;
+        }
         proto = ancestor;
+      }
+      if (!foundPrototype) {
+        console.warn(definition.tag + " prototype not found in prototype chain for " + definition.is);
       }
       definition.native = nativePrototype;
     }
@@ -8795,6 +8967,9 @@ CustomElements.addModule(function(scope) {
   var isInstance;
   if (!Object.__proto__ && !useNative) {
     isInstance = function(obj, ctor) {
+      if (obj instanceof ctor) {
+        return true;
+      }
       var p = obj;
       while (p) {
         if (p === ctor.prototype) {
@@ -8819,7 +8994,7 @@ CustomElements.addModule(function(scope) {
   }
   wrapDomMethodToForceUpgrade(Node.prototype, "cloneNode");
   wrapDomMethodToForceUpgrade(document, "importNode");
-  if (isIE11OrOlder) {
+  if (isIE) {
     (function() {
       var importNode = document.importNode;
       document.importNode = function() {
@@ -8847,7 +9022,7 @@ CustomElements.addModule(function(scope) {
 (function(scope) {
   var useNative = scope.useNative;
   var initializeModules = scope.initializeModules;
-  var isIE11OrOlder = /Trident/.test(navigator.userAgent);
+  var isIE = scope.isIE;
   if (useNative) {
     var nop = function() {};
     scope.watchShadow = nop;
@@ -8863,52 +9038,50 @@ CustomElements.addModule(function(scope) {
     initializeModules();
   }
   var upgradeDocumentTree = scope.upgradeDocumentTree;
+  var upgradeDocument = scope.upgradeDocument;
   if (!window.wrap) {
     if (window.ShadowDOMPolyfill) {
-      window.wrap = ShadowDOMPolyfill.wrapIfNeeded;
-      window.unwrap = ShadowDOMPolyfill.unwrapIfNeeded;
+      window.wrap = window.ShadowDOMPolyfill.wrapIfNeeded;
+      window.unwrap = window.ShadowDOMPolyfill.unwrapIfNeeded;
     } else {
       window.wrap = window.unwrap = function(node) {
         return node;
       };
     }
   }
-  function bootstrap() {
-    upgradeDocumentTree(wrap(document));
-    if (window.HTMLImports) {
-      HTMLImports.__importsParsingHook = function(elt) {
-        upgradeDocumentTree(wrap(elt.import));
-      };
-    }
-    CustomElements.ready = true;
-    setTimeout(function() {
-      CustomElements.readyTime = Date.now();
-      if (window.HTMLImports) {
-        CustomElements.elapsed = CustomElements.readyTime - HTMLImports.readyTime;
+  if (window.HTMLImports) {
+    window.HTMLImports.__importsParsingHook = function(elt) {
+      if (elt.import) {
+        upgradeDocument(wrap(elt.import));
       }
-      document.dispatchEvent(new CustomEvent("WebComponentsReady", {
-        bubbles: true
-      }));
-    });
-  }
-  if (isIE11OrOlder && typeof window.CustomEvent !== "function") {
-    window.CustomEvent = function(inType, params) {
-      params = params || {};
-      var e = document.createEvent("CustomEvent");
-      e.initCustomEvent(inType, Boolean(params.bubbles), Boolean(params.cancelable), params.detail);
-      return e;
     };
-    window.CustomEvent.prototype = window.Event.prototype;
+  }
+  function bootstrap() {
+    upgradeDocumentTree(window.wrap(document));
+    window.CustomElements.ready = true;
+    var requestAnimationFrame = window.requestAnimationFrame || function(f) {
+      setTimeout(f, 16);
+    };
+    requestAnimationFrame(function() {
+      setTimeout(function() {
+        window.CustomElements.readyTime = Date.now();
+        if (window.HTMLImports) {
+          window.CustomElements.elapsed = window.CustomElements.readyTime - window.HTMLImports.readyTime;
+        }
+        document.dispatchEvent(new CustomEvent("WebComponentsReady", {
+          bubbles: true
+        }));
+      });
+    });
   }
   if (document.readyState === "complete" || scope.flags.eager) {
     bootstrap();
   } else if (document.readyState === "interactive" && !window.attachEvent && (!window.HTMLImports || window.HTMLImports.ready)) {
     bootstrap();
   } else {
-    var loadEvent = window.HTMLImports && !HTMLImports.ready ? "HTMLImportsLoaded" : "DOMContentLoaded";
+    var loadEvent = window.HTMLImports && !window.HTMLImports.ready ? "HTMLImportsLoaded" : "DOMContentLoaded";
     window.addEventListener(loadEvent, bootstrap);
   }
-  scope.isIE11OrOlder = isIE11OrOlder;
 })(window.CustomElements);
 
 (function(scope) {
@@ -8926,66 +9099,6 @@ CustomElements.addModule(function(scope) {
 })(window.WebComponents);
 
 (function(scope) {
-  "use strict";
-  if (!window.performance) {
-    var start = Date.now();
-    window.performance = {
-      now: function() {
-        return Date.now() - start;
-      }
-    };
-  }
-  if (!window.requestAnimationFrame) {
-    window.requestAnimationFrame = function() {
-      var nativeRaf = window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
-      return nativeRaf ? function(callback) {
-        return nativeRaf(function() {
-          callback(performance.now());
-        });
-      } : function(callback) {
-        return window.setTimeout(callback, 1e3 / 60);
-      };
-    }();
-  }
-  if (!window.cancelAnimationFrame) {
-    window.cancelAnimationFrame = function() {
-      return window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || function(id) {
-        clearTimeout(id);
-      };
-    }();
-  }
-  var elementDeclarations = [];
-  var polymerStub = function(name, dictionary) {
-    if (typeof name !== "string" && arguments.length === 1) {
-      Array.prototype.push.call(arguments, document._currentScript);
-    }
-    elementDeclarations.push(arguments);
-  };
-  window.Polymer = polymerStub;
-  scope.consumeDeclarations = function(callback) {
-    scope.consumeDeclarations = function() {
-      throw "Possible attempt to load Polymer twice";
-    };
-    if (callback) {
-      callback(elementDeclarations);
-    }
-    elementDeclarations = null;
-  };
-  function installPolymerWarning() {
-    if (window.Polymer === polymerStub) {
-      window.Polymer = function() {
-        throw new Error("You tried to use polymer without loading it first. To " + 'load polymer, <link rel="import" href="' + 'components/polymer/polymer.html">');
-      };
-    }
-  }
-  if (HTMLImports.useNative) {
-    installPolymerWarning();
-  } else {
-    addEventListener("DOMContentLoaded", installPolymerWarning);
-  }
-})(window.WebComponents);
-
-(function(scope) {
   var style = document.createElement("style");
   style.textContent = "" + "body {" + "transition: opacity ease-in 0.2s;" + " } \n" + "body[unresolved] {" + "opacity: 0; display: block; overflow: hidden; position: relative;" + " } \n";
   var head = document.querySelector("head");
@@ -8995,4 +9108,4 @@ CustomElements.addModule(function(scope) {
 (function(scope) {
   window.Platform = scope;
 })(window.WebComponents);
-},{}]},{},["/Users/yw/src/yw/about/index.js"]);
+},{}]},{},["/Users/yw/src/yw/yoshuawuyts.github.io/index.js"]);
