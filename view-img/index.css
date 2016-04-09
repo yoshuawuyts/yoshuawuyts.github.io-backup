@@ -40,10 +40,6 @@
 
 @media all and (--wrist), (--palm) {
   .view-img-tagline {
-    position: initial;
-    text-align: center;
-    bottom: calc(var(--layout-body-border));
-    max-width: calc(var(--layout-img-tagline-width) / 2);
-    font-size: var(--font-size-title);
+    display: none;
   }
 }

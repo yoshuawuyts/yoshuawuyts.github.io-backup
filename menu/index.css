@@ -7,8 +7,14 @@
 }
 
 @media all and (--wrist), (--palm) {
-  .menu {
-    display: none;
+  .menu, .menu-nav {
+    width: calc(100% - var(--layout-body-border) * 2);
+    left: var(--layout-body-border);
+    padding-right: 0;
+  }
+  .menu-nav-inner {
+    position: initial;
+    text-align: center;
   }
 }
 
